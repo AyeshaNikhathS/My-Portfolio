@@ -1035,21 +1035,25 @@ vertices = output.vertices.detach().cpu().numpy()</code></pre>
 function initModals() {
   // Resume Modal
   const resumeModal = document.getElementById('resume-modal');
-  const resumeBtn = document.getElementById('resume-preview-btn');
+  const resumeTriggers = document.querySelectorAll('.open-resume-trigger, #resume-preview-btn');
   const closeResumeBtn = document.getElementById('close-resume-modal');
   const printResumeBtn = document.getElementById('print-resume-btn');
 
-  if (resumeBtn && resumeModal) {
-    resumeBtn.addEventListener('click', () => {
-      resumeModal.classList.add('active');
-      resumeModal.setAttribute('aria-hidden', 'false');
+  resumeTriggers.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      if (resumeModal) {
+        resumeModal.classList.add('active');
+        resumeModal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
     });
-  }
+  });
 
   if (closeResumeBtn && resumeModal) {
     closeResumeBtn.addEventListener('click', () => {
       resumeModal.classList.remove('active');
       resumeModal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
     });
   }
 
@@ -1089,16 +1093,28 @@ function initModals() {
   // Close modals on clicking backdrop
   window.addEventListener('click', (e) => {
     if (e.target.classList.contains('modal-backdrop')) {
-      if (resumeModal) resumeModal.classList.remove('active');
-      if (projectModal) projectModal.classList.remove('active');
+      if (resumeModal) {
+        resumeModal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+      if (projectModal) {
+        projectModal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
     }
   });
 
   // Close modals on Escape key
   window.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
-      if (resumeModal) resumeModal.classList.remove('active');
-      if (projectModal) projectModal.classList.remove('active');
+      if (resumeModal) {
+        resumeModal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+      if (projectModal) {
+        projectModal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
     }
   });
 }
@@ -1162,6 +1178,21 @@ function initContactForm() {
   const subjectError = document.getElementById('subject-error');
   const msgError = document.getElementById('message-error');
 
+  // Quick inquiry topic buttons
+  const quickTags = document.querySelectorAll('#quick-inquiry-tags .quick-tag');
+  quickTags.forEach((tag) => {
+    tag.addEventListener('click', () => {
+      quickTags.forEach((t) => t.classList.remove('active'));
+      tag.classList.add('active');
+      const subject = tag.getAttribute('data-subject');
+      if (subject && subjectInput) {
+        subjectInput.value = subject;
+        subjectError.textContent = '';
+        msgInput.focus();
+      }
+    });
+  });
+
   form.addEventListener('submit', (e) => {
     e.preventDefault();
     let isValid = true;
@@ -1205,20 +1236,54 @@ function initContactForm() {
 
     if (!isValid) return;
 
-    // Simulate sending message
+    // Dispatch message via FormSubmit AJAX with mailto fallback
     submitBtn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Dispatching Message...';
     submitBtn.disabled = true;
 
-    setTimeout(() => {
-      submitBtn.innerHTML = '<i class="fa-solid fa-check"></i> Message Sent!';
-      showToast('Thank you! Your message has been sent to Ayesha Nikhath S.', 'success');
-      form.reset();
+    const payload = {
+      name: nameInput.value.trim(),
+      email: emailInput.value.trim(),
+      _subject: `[Portfolio Inquiry] ${subjectInput.value.trim()}`,
+      message: msgInput.value.trim()
+    };
 
-      setTimeout(() => {
-        submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Send Message';
-        submitBtn.disabled = false;
-      }, 3000);
-    }, 1200);
+    fetch('https://formsubmit.co/ajax/ayeshasi2128@gmail.com', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify(payload)
+    })
+      .then((res) => {
+        if (!res.ok) throw new Error('Submission failed');
+        return res.json();
+      })
+      .then(() => {
+        submitBtn.innerHTML = '<i class="fa-solid fa-check"></i> Message Sent!';
+        showToast('Thank you! Your message has been delivered to Ayesha Nikhath S.', 'success');
+        form.reset();
+        quickTags.forEach((t) => t.classList.remove('active'));
+
+        setTimeout(() => {
+          submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Send Message';
+          submitBtn.disabled = false;
+        }, 3000);
+      })
+      .catch(() => {
+        // Graceful fallback to user mail client
+        showToast('Redirecting to your email client to dispatch message...', 'info');
+        const mailtoUrl = `mailto:ayeshasi2128@gmail.com?subject=${encodeURIComponent(payload._subject)}&body=${encodeURIComponent(
+          `Name: ${payload.name}\nEmail: ${payload.email}\n\nMessage:\n${payload.message}`
+        )}`;
+        window.location.href = mailtoUrl;
+
+        submitBtn.innerHTML = '<i class="fa-solid fa-envelope-open-text"></i> Email Client Opened';
+        setTimeout(() => {
+          submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Send Message';
+          submitBtn.disabled = false;
+        }, 3000);
+      });
   });
 }
 

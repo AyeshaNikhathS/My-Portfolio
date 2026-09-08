@@ -1719,10 +1719,14 @@ a {
   gap: 2.5rem;
 }
 
-.contact-cards-column {
+.contact-cards-column,
+.contact-details-container {
+  max-width: 720px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
+  width: 100%;
 }
 
 .contact-info-card {
@@ -1767,13 +1771,35 @@ a {
   white-space: nowrap;
 }
 
+.resume-contact-card {
+  border-color: rgba(0, 242, 254, 0.35);
+  background: linear-gradient(135deg, rgba(16, 23, 38, 0.85) 0%, rgba(0, 242, 254, 0.08) 100%);
+  box-shadow: 0 4px 20px rgba(0, 242, 254, 0.1);
+  transition: var(--transition-smooth);
+}
+
+.resume-contact-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent-cyan);
+  box-shadow: 0 8px 25px rgba(0, 242, 254, 0.2);
+}
+
 .contact-form-wrapper {
   padding: 2.4rem;
 }
 
+.form-header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+  flex-wrap: wrap;
+}
+
 .form-title {
   font-size: 1.35rem;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.3rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -1781,7 +1807,54 @@ a {
 
 .form-subtitle {
   font-size: 0.88rem;
-  margin-bottom: 1.8rem;
+  margin-bottom: 0;
+  color: var(--text-muted);
+}
+
+/* Quick Opportunity Topic Tags */
+.quick-inquiry-box {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: 0.85rem 1rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.quick-inquiry-label {
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent-cyan);
+  font-weight: 600;
+}
+
+.quick-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.quick-tag {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  font-family: var(--font-sans);
+}
+
+.quick-tag:hover,
+.quick-tag.active {
+  background: rgba(0, 242, 254, 0.15);
+  border-color: var(--accent-cyan);
+  color: var(--text-main);
+  transform: translateY(-1px);
 }
 
 .contact-form {
