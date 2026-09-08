@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ayesha Nikhath S | Data Analyst & AI/ML Professional</title>
+  <meta name="description" content="Portfolio of Ayesha Nikhath S - Data Analyst and AI/ML Professional specializing in Computer Vision, 2D-to-3D Human Reconstruction, Deep Learning, SQL, and Data Analytics." />
+  <meta name="keywords" content="Ayesha Nikhath S, Data Analyst, AI Developer, Machine Learning, Computer Vision, PyTorch, OpenCV, SQL, Power BI, Bangalore" />
+  <meta name="author" content="Ayesha Nikhath S" />
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Ayesha Nikhath S | Data Analyst & AI/ML Professional" />
+  <meta property="og:description" content="Explore end-to-end AI/ML solutions, 3D human body reconstruction, GAN virtual try-on, and enterprise data analytics." />
+  <meta property="og:image" content="assets/hero_avatar.jpg" />
+  <meta property="og:type" content="website" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Neural Particle Canvas -->
+  <canvas id="neural-canvas"></canvas>
+
+  <!-- Notification Toast Container -->
+  <div id="toast-container" class="toast-container" aria-live="polite"></div>
+
+  <!-- Navigation Bar -->
+  <header class="header">
+    <div class="nav-container">
+      <a href="#hero" class="nav-brand">
+        <span class="brand-badge"><i class="fa-solid fa-brain"></i></span>
+        <span class="brand-text">Ayesha<span class="gradient-text">.AI</span></span>
+      </a>
+
+      <nav class="nav-menu" id="nav-menu">
+        <ul class="nav-list">
+          <li><a href="#about" class="nav-link"><i class="fa-solid fa-user-astronaut"></i> About</a></li>
+          <li><a href="#skills" class="nav-link"><i class="fa-solid fa-microchip"></i> Skills</a></li>
+          <li><a href="#ai-lab" class="nav-link highlight-pill"><i class="fa-solid fa-flask-vial"></i> AI Lab</a></li>
+          <li><a href="#experience" class="nav-link"><i class="fa-solid fa-briefcase"></i> Experience</a></li>
+          <li><a href="#projects" class="nav-link"><i class="fa-solid fa-diagram-project"></i> Projects</a></li>
+          <li><a href="#education" class="nav-link"><i class="fa-solid fa-graduation-cap"></i> Education</a></li>
+          <li><a href="#contact" class="nav-link"><i class="fa-solid fa-paper-plane"></i> Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button id="resume-preview-btn" class="btn btn-glass btn-sm" title="Preview Resume">
+          <i class="fa-solid fa-file-lines"></i> <span>Resume</span>
+        </button>
+        <a href="#contact" class="btn btn-primary btn-sm">
+          <i class="fa-solid fa-bolt"></i> <span>Get in Touch</span>
+        </a>
+        <button id="mobile-toggle" class="mobile-toggle" aria-label="Toggle navigation menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="hero" class="section hero-section">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="status-pill">
+            <span class="pulse-dot"></span>
+            <span>Available for Data Analyst & AI/ML Opportunities</span>
+            <span class="location-tag"><i class="fa-solid fa-location-dot"></i> Bangalore, IN</span>
+          </div>
+
+          <h1 class="hero-title">
+            Hi, I'm <span class="gradient-text glow-text">Ayesha Nikhath S</span>
+          </h1>
+
+          <div class="typewriter-container">
+            <span class="typewriter-prefix">&gt; specializing in </span>
+            <span id="typewriter-text" class="typewriter-text"></span>
+            <span class="typewriter-cursor">|</span>
+          </div>
+
+          <p class="hero-bio">
+            Data Analyst and AI/ML professional combining robust <strong>deep learning pipelines</strong> with 
+            <strong>enterprise backend data analytics</strong>. Experienced in building 2D-to-3D human reconstruction, 
+            GAN-driven virtual try-on systems, exploratory data analysis (EDA), and scalable SQL workflows.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#ai-lab" class="btn btn-primary">
+              <i class="fa-solid fa-play"></i> Launch AI Showcase
+            </a>
+            <a href="#projects" class="btn btn-glass">
+              <i class="fa-solid fa-folder-open"></i> View Work
+            </a>
+            <button id="copy-email-hero-btn" class="btn btn-outline" data-copy="ayeshasi2128@gmail.com">
+              <i class="fa-solid fa-copy"></i> Copy Email
+            </button>
+          </div>
+
+          <div class="hero-quick-stats">
+            <div class="stat-card">
+              <span class="stat-num" data-target="8.1">8.1</span>
+              <span class="stat-label">B.E. CSE CGPA</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-num" data-target="3">3+</span>
+              <span class="stat-label">Industry & Tech Roles</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-num">98.6%</span>
+              <span class="stat-label">Model Accuracy Benchmarks</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-num">2D &rarr; 3D</span>
+              <span class="stat-label">SMPL Mesh Reconstruction</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="avatar-card-wrapper">
+            <div class="avatar-glow-ring"></div>
+            <div class="avatar-card glass-panel">
+              <div class="avatar-header">
+                <div class="terminal-dots">
+                  <span class="dot red"></span>
+                  <span class="dot yellow"></span>
+                  <span class="dot green"></span>
+                </div>
+                <span class="terminal-tag"><i class="fa-solid fa-terminal"></i> ayesha_ml_env: active</span>
+              </div>
+
+              <div class="avatar-image-container">
+                <img src="assets/hero_avatar.jpg" alt="Ayesha Nikhath S - AI/ML Engineer Portrait" class="avatar-img" />
+                <div class="hud-overlay">
+                  <div class="hud-reticle"></div>
+                  <div class="hud-item hud-tl"><span>CONFIDENCE</span><strong>99.4%</strong></div>
+                  <div class="hud-item hud-tr"><span>LATENCY</span><strong>18ms</strong></div>
+                  <div class="hud-item hud-bl"><span>MODEL</span><strong>SMPL-X / GAN</strong></div>
+                  <div class="hud-item hud-br"><span>STATUS</span><strong>OPTIMAL</strong></div>
+                </div>
+              </div>
+
+              <div class="avatar-footer">
+                <div class="floating-chips">
+                  <span class="chip"><i class="fa-brands fa-python"></i> Python</span>
+                  <span class="chip"><i class="fa-solid fa-database"></i> SQL</span>
+                  <span class="chip"><i class="fa-solid fa-eye"></i> OpenCV</span>
+                  <span class="chip"><i class="fa-solid fa-fire"></i> PyTorch</span>
+                  <span class="chip"><i class="fa-solid fa-chart-pie"></i> Power BI</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Floating Badge Badges -->
+            <div class="floating-badge badge-top-left glass-panel">
+              <i class="fa-solid fa-cube text-cyan"></i>
+              <div>
+                <strong>3D Mesh Extraction</strong>
+                <small>Anthropometric fitting</small>
+              </div>
+            </div>
+
+            <div class="floating-badge badge-bottom-right glass-panel">
+              <i class="fa-solid fa-wand-magic-sparkles text-purple"></i>
+              <div>
+                <strong>GAN Virtual Try-On</strong>
+                <small>Image-to-image synthesis</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about-section">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag"><i class="fa-solid fa-circle-info"></i> About Me</span>
+          <h2 class="section-title">Bridging <span class="gradient-text">Data Analytics</span> & <span class="gradient-text">Computer Vision</span></h2>
+          <p class="section-subtitle">
+            Transforming raw data into actionable intelligence and building computer vision systems that solve real-world industry challenges.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-card glass-panel">
+            <div class="card-icon"><i class="fa-solid fa-brain"></i></div>
+            <h3>Computer Vision & AI</h3>
+            <p>
+              Hands-on mastery in building 2D-to-3D human mesh reconstruction, video frame extraction pipelines with OpenCV & NumPy, and generative image-to-image GAN models for virtual try-on.
+            </p>
+            <ul class="about-feature-list">
+              <li><i class="fa-solid fa-check text-cyan"></i> SMPL 3D parametric human body modeling</li>
+              <li><i class="fa-solid fa-check text-cyan"></i> Pose estimation and keypoint detection</li>
+              <li><i class="fa-solid fa-check text-cyan"></i> Convolutional Neural Networks (CNNs) & PyTorch</li>
+            </ul>
+          </div>
+
+          <div class="about-card glass-panel highlight-card">
+            <div class="card-icon"><i class="fa-solid fa-chart-line"></i></div>
+            <h3>Data Analytics & Business Intelligence</h3>
+            <p>
+              Passionate about discovering patterns in complex datasets. Skilled in end-to-end data cleaning, exploratory data analysis (EDA), statistical evaluation, and interactive executive dashboards.
+            </p>
+            <ul class="about-feature-list">
+              <li><i class="fa-solid fa-check text-cyan"></i> Advanced SQL data validation & ETL workflows</li>
+              <li><i class="fa-solid fa-check text-cyan"></i> Power BI, Tableau, and Excel reporting</li>
+              <li><i class="fa-solid fa-check text-cyan"></i> Pandas & NumPy automated data preprocessing</li>
+            </ul>
+          </div>
+
+          <div class="about-card glass-panel">
+            <div class="card-icon"><i class="fa-solid fa-gears"></i></div>
+            <h3>Full-Stack & Systems Support</h3>
+            <p>
+              Experienced in digital transformation, ERP backend database troubleshooting, SLA-driven ticketing, and integrating machine learning pipelines with full-stack applications.
+            </p>
+            <ul class="about-feature-list">
+              <li><i class="fa-solid fa-check text-cyan"></i> ERP backend support & transaction validation</li>
+              <li><i class="fa-solid fa-check text-cyan"></i> REST APIs, HTML/CSS/JavaScript, React.js</li>
+              <li><i class="fa-solid fa-check text-cyan"></i> Incident triage, debugging, & workflow automation</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Personal Highlights / Quick Contact Banner -->
+        <div class="contact-strip glass-panel">
+          <div class="strip-item">
+            <i class="fa-solid fa-envelope text-cyan"></i>
+            <div>
+              <span class="label">Email Address</span>
+              <a href="mailto:ayeshasi2128@gmail.com" class="val">ayeshasi2128@gmail.com</a>
+            </div>
+            <button class="btn-icon" data-copy="ayeshasi2128@gmail.com" title="Copy Email">
+              <i class="fa-solid fa-copy"></i>
+            </button>
+          </div>
+
+          <div class="strip-item">
+            <i class="fa-solid fa-phone text-purple"></i>
+            <div>
+              <span class="label">Phone Number</span>
+              <a href="tel:+916366302944" class="val">+91-6366302944</a>
+            </div>
+            <button class="btn-icon" data-copy="+916366302944" title="Copy Phone">
+              <i class="fa-solid fa-copy"></i>
+            </button>
+          </div>
+
+          <div class="strip-item">
+            <i class="fa-brands fa-linkedin text-cyan"></i>
+            <div>
+              <span class="label">LinkedIn Profile</span>
+              <a href="https://linkedin.com/in/ayesha-nikhath-s" target="_blank" rel="noopener noreferrer" class="val">linkedin.com/in/ayesha-nikhath-s</a>
+            </div>
+            <a href="https://linkedin.com/in/ayesha-nikhath-s" target="_blank" rel="noopener noreferrer" class="btn-icon" title="Visit Profile">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
+
+          <div class="strip-item">
+            <i class="fa-solid fa-graduation-cap text-green"></i>
+            <div>
+              <span class="label">Education</span>
+              <span class="val">B.E. Computer Science (CGPA: 8.1)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive AI & Data Lab (Flagship Feature) -->
+    <section id="ai-lab" class="section ai-lab-section">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag highlight-tag"><i class="fa-solid fa-flask-vial"></i> Interactive Laboratory</span>
+          <h2 class="section-title">Experience the <span class="gradient-text">AI & Analytics Workflows</span></h2>
+          <p class="section-subtitle">
+            Interactive real-time simulations based on Ayesha's production implementations at Maskan Technologies and Tech Avant Garde.
+          </p>
+        </div>
+
+        <!-- Lab Tabs -->
+        <div class="lab-tabs">
+          <button class="lab-tab-btn active" data-tab="tab-tryon">
+            <i class="fa-solid fa-street-view"></i> 2D &rarr; 3D Reconstruction & Virtual Try-On
+          </button>
+          <button class="lab-tab-btn" data-tab="tab-analytics">
+            <i class="fa-solid fa-chart-pie"></i> Interactive SQL & EDA Analytics Sandbox
+          </button>
+        </div>
+
+        <!-- Lab Content: 3D Try-on Simulator -->
+        <div id="tab-tryon" class="lab-tab-content active glass-panel">
+          <div class="lab-grid">
+            <div class="lab-controls">
+              <div class="control-card">
+                <h4><i class="fa-solid fa-sliders"></i> Simulation Parameters</h4>
+                
+                <div class="control-group">
+                  <label for="pose-select">1. Human Input Pose:</label>
+                  <select id="pose-select" class="form-select">
+                    <option value="a-pose" selected>Standard A-Pose (Reference Calibration)</option>
+                    <option value="t-pose">Classic T-Pose (Full Span Keypoints)</option>
+                    <option value="fashion-walk">Catwalk Dynamic Stride</option>
+                    <option value="seated">Ergonomic Anthropometric Stance</option>
+                  </select>
+                </div>
+
+                <div class="control-group">
+                  <label for="garment-select">2. Garment for GAN Try-On:</label>
+                  <select id="garment-select" class="form-select">
+                    <option value="cyber-jacket" selected>Cyber Tech Bomber Jacket (Cyan/Violet)</option>
+                    <option value="business-suit">Tailored Formal Blazer</option>
+                    <option value="athleisure">Athleisure Performance Hoodie</option>
+                    <option value="designer-kurti">Ethnic Designer Kurti (Textile Mesh)</option>
+                  </select>
+                </div>
+
+                <div class="control-group">
+                  <label>3. Pipeline Inspection Layer:</label>
+                  <div class="layer-radio-group">
+                    <button class="layer-btn active" data-layer="wireframe"><i class="fa-solid fa-cubes"></i> 3D SMPL Wireframe</button>
+                    <button class="layer-btn" data-layer="keypoints"><i class="fa-solid fa-bone"></i> Pose Keypoints</button>
+                    <button class="layer-btn" data-layer="gan"><i class="fa-solid fa-wand-magic"></i> GAN Try-On Render</button>
+                  </div>
+                </div>
+
+                <div class="control-group">
+                  <label for="mesh-density-slider">
+                    <span>Mesh Density:</span>
+                    <span id="mesh-density-val" class="text-cyan">6,890 vertices</span>
+                  </label>
+                  <input type="range" id="mesh-density-slider" min="1000" max="15000" step="100" value="6890" class="custom-slider" />
+                </div>
+
+                <button id="run-inference-btn" class="btn btn-primary btn-block">
+                  <i class="fa-solid fa-bolt"></i> Run Model Inference
+                </button>
+              </div>
+
+              <!-- Measurement Extraction Card -->
+              <div class="control-card measurement-card">
+                <h4><i class="fa-solid fa-ruler-combined"></i> Anthropometric Extracted Metrics</h4>
+                <div class="metrics-mini-grid">
+                  <div class="mini-metric">
+                    <span>Estimated Height</span>
+                    <strong id="metric-height">168.4 cm</strong>
+                  </div>
+                  <div class="mini-metric">
+                    <span>Chest Breadth</span>
+                    <strong id="metric-chest">92.1 cm</strong>
+                  </div>
+                  <div class="mini-metric">
+                    <span>Waist Circumference</span>
+                    <strong id="metric-waist">74.6 cm</strong>
+                  </div>
+                  <div class="mini-metric">
+                    <span>Recommended Size</span>
+                    <strong id="metric-size" class="text-green">Medium (M-Regular)</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Visual Canvas Simulation -->
+            <div class="lab-display">
+              <div class="simulator-viewport">
+                <canvas id="tryon-simulator-canvas" width="600" height="480"></canvas>
+                <div class="simulator-hud">
+                  <div class="hud-pill"><i class="fa-solid fa-circle text-green pulse-dot"></i> <span id="hud-status">MODEL: PyTorch SMPL-X Engine</span></div>
+                  <div class="hud-pill"><i class="fa-solid fa-clock"></i> <span id="hud-latency">Latency: 16.4 ms</span></div>
+                  <div class="hud-pill"><i class="fa-solid fa-gauge-high"></i> <span id="hud-acc">IoU Score: 0.942</span></div>
+                </div>
+                <div class="simulator-overlay-msg" id="simulator-overlay-msg">
+                  <i class="fa-solid fa-arrows-rotate fa-spin"></i> Processing Multi-View Frames...
+                </div>
+              </div>
+
+              <div class="pipeline-explainer">
+                <h5><i class="fa-solid fa-diagram-project"></i> Pipeline Architecture Highlights:</h5>
+                <p>
+                  1. Video frames parsed with <strong>OpenCV & NumPy</strong> &rarr; 
+                  2. 2D keypoints extracted via CNN &rarr; 
+                  3. Fitted to <strong>SMPL 3D parametric human body mesh</strong> &rarr; 
+                  4. Anthropometric sizing derived via <strong>Pandas & SQL</strong> &rarr; 
+                  5. Garment mapped via <strong>GAN image-to-image synthesis</strong>.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Lab Content: Interactive SQL & EDA Analytics -->
+        <div id="tab-analytics" class="lab-tab-content glass-panel">
+          <div class="lab-grid">
+            <div class="lab-controls">
+              <div class="control-card">
+                <h4><i class="fa-solid fa-database"></i> SQL Query & EDA Dataset</h4>
+                <p class="small-text">Select a scenario to run analytics queries across ERP backend data and ML validation metrics.</p>
+
+                <div class="control-group">
+                  <label for="query-preset">Pre-configured Query Scenarios:</label>
+                  <select id="query-preset" class="form-select">
+                    <option value="edtech-kpi" selected>EdTech Platform: User Onboarding vs Churn Rate</option>
+                    <option value="erp-validation">ERP Transaction Audit: SQL Backend SLA Timelines</option>
+                    <option value="cv-benchmarks">Computer Vision: Model Loss & IoU Over 50 Epochs</option>
+                    <option value="regional-sales">Business Intelligence: Regional Performance & Growth</option>
+                  </select>
+                </div>
+
+                <div class="query-terminal">
+                  <div class="terminal-bar">
+                    <span>SQL Query Editor (Active Database: Postgres / MySQL)</span>
+                    <button id="copy-sql-btn" class="btn-micro" title="Copy SQL"><i class="fa-solid fa-copy"></i></button>
+                  </div>
+                  <pre><code id="sql-code-display">SELECT 
+  DATE_TRUNC('month', created_at) AS month,
+  COUNT(DISTINCT student_id) AS active_students,
+  ROUND(AVG(completion_rate), 2) AS avg_completion_pct,
+  SUM(CASE WHEN status = 'churned' THEN 1 ELSE 0 END) AS churn_count
+FROM edtech_erp_platform.user_events
+GROUP BY 1 ORDER BY 1 ASC;</code></pre>
+                </div>
+
+                <button id="execute-sql-btn" class="btn btn-primary btn-block">
+                  <i class="fa-solid fa-bolt"></i> Execute Query & Refresh Visuals
+                </button>
+              </div>
+
+              <div class="control-card">
+                <h4><i class="fa-solid fa-chart-simple"></i> Summary Telemetry</h4>
+                <div class="metrics-mini-grid">
+                  <div class="mini-metric">
+                    <span>Records Queried</span>
+                    <strong id="stat-records">124,580 rows</strong>
+                  </div>
+                  <div class="mini-metric">
+                    <span>Execution Time</span>
+                    <strong id="stat-time" class="text-green">42 ms (Indexed)</strong>
+                  </div>
+                  <div class="mini-metric">
+                    <span>Data Completeness</span>
+                    <strong id="stat-completeness">99.8%</strong>
+                  </div>
+                  <div class="mini-metric">
+                    <span>Outliers Identified</span>
+                    <strong id="stat-outliers" class="text-cyan">14 flagged</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Analytics Visual Output -->
+            <div class="lab-display">
+              <div class="analytics-viewport">
+                <div class="analytics-header">
+                  <h4 id="analytics-chart-title">EdTech User Onboarding & Retention Trajectory</h4>
+                  <div class="chart-type-toggles">
+                    <button class="chart-type-btn active" data-type="bar"><i class="fa-solid fa-chart-column"></i> Bar</button>
+                    <button class="chart-type-btn" data-type="line"><i class="fa-solid fa-chart-line"></i> Line</button>
+                  </div>
+                </div>
+
+                <div class="chart-container">
+                  <canvas id="analytics-chart-canvas" width="600" height="340"></canvas>
+                </div>
+
+                <div class="analytics-insights-box">
+                  <div class="insight-badge"><i class="fa-solid fa-lightbulb text-yellow"></i> <strong>EDA Insight:</strong></div>
+                  <p id="analytics-insight-text">
+                    Analysis shows a 34% increase in user retention following the deployment of automated SLA ticketing workflows, with transactional anomalies dropping under 0.2%.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical Skills Matrix -->
+    <section id="skills" class="section skills-section">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag"><i class="fa-solid fa-microchip"></i> Core Competencies</span>
+          <h2 class="section-title">Technical <span class="gradient-text">Skill Matrix</span></h2>
+          <p class="section-subtitle">
+            Curated toolkit spanning Artificial Intelligence, Machine Learning, Data Analytics, Query Languages, and Web Technologies.
+          </p>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="skills-filter-tabs">
+          <button class="filter-btn active" data-filter="all">All Skills</button>
+          <button class="filter-btn" data-filter="ai-ml">Machine Learning & AI</button>
+          <button class="filter-btn" data-filter="analytics">Data Analytics & BI</button>
+          <button class="filter-btn" data-filter="programming">Programming & Query</button>
+          <button class="filter-btn" data-filter="tools">Libraries & Frameworks</button>
+          <button class="filter-btn" data-filter="web">Web & Full Stack</button>
+        </div>
+
+        <!-- Skills Grid -->
+        <div class="skills-grid" id="skills-grid">
+          <!-- Python -->
+          <div class="skill-card glass-panel" data-category="programming ai-ml analytics">
+            <div class="skill-top">
+              <div class="skill-icon text-cyan"><i class="fa-brands fa-python"></i></div>
+              <div class="skill-info">
+                <h4>Python</h4>
+                <span>Core Programming & AI Workflows</span>
+              </div>
+              <span class="skill-level-badge">Proficient</span>
+            </div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar-fill" style="width: 95%;"></div>
+            </div>
+            <p class="skill-desc">Pandas, NumPy, OpenCV, PyTorch, model building, automated data pipelines.</p>
+          </div>
+
+          <!-- SQL -->
+          <div class="skill-card glass-panel" data-category="programming analytics">
+            <div class="skill-top">
+              <div class="skill-icon text-purple"><i class="fa-solid fa-database"></i></div>
+              <div class="skill-info">
+                <h4>SQL</h4>
+                <span>Relational Databases & ERP Queries</span>
+              </div>
+              <span class="skill-level-badge">Advanced</span>
+            </div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar-fill" style="width: 90%;"></div>
+            </div>
+            <p class="skill-desc">Complex queries, joins, aggregations, data extraction, validation, and ETL.</p>
+          </div>
+
+          <!-- Computer Vision & OpenCV -->
+          <div class="skill-card glass-panel" data-category="ai-ml tools">
+            <div class="skill-top">
+              <div class="skill-icon text-cyan"><i class="fa-solid fa-eye"></i></div>
+              <div class="skill-info">
+                <h4>OpenCV & Computer Vision</h4>
+                <span>Image & Video Processing</span>
+              </div>
+              <span class="skill-level-badge">Proficient</span>
+            </div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar-fill" style="width: 92%;"></div>
+            </div>
+            <p class="skill-desc">Video frame extraction, multi-view datasets, feature detection, image preprocessing.</p>
+          </div>
+
+          <!-- PyTorch & Deep Learning -->
+          <div class="skill-card glass-panel" data-category="ai-ml tools">
+            <div class="skill-top">
+              <div class="skill-icon text-green"><i class="fa-solid fa-fire"></i></div>
+              <div class="skill-info">
+                <h4>PyTorch & Deep Learning</h4>
+                <span>Neural Architectures & SMPL Models</span>
+              </div>
+              <span class="skill-level-badge">Skilled</span>
+            </div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar-fill" style="width: 88%;"></div>
+            </div>
+            <p class="skill-desc">CNNs, 3D human reconstruction, SMPL parametric models, model optimization.</p>
+          </div>
+
+          <!-- Data Analytics & EDA -->
+          <div class="skill-card glass-panel" data-category="analytics">
+            <div class="skill-top">
+              <div class="skill-icon text-yellow"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+              <div class="skill-info">
+                <h4>Data Analytics & EDA</h4>
+                <span>Exploratory Analysis & Preprocessing</span>
+              </div>
+              <span class="skill-level-badge">Proficient</span>
+            </div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar-fill" style="width: 94%;"></div>
+            </div>
+            <p class="skill-desc">Data cleaning, outlier detection, hypothesis testing, feature engineering.</p>
+          </div>
+
+          <!-- Power BI & Tableau -->
+          <div class="skill-card glass-panel" data-category="analytics tools">
+            <div class="skill-top">
+              <div class="skill-icon text-cyan"><i class="fa-solid fa-chart-pie"></i></div>
+              <div class="skill-info">
+                <h4>Power BI & Tableau</h4>
+                <span>Executive Dashboards & BI Reporting</span>
+              </div>
+              <span class="skill-level-badge">Skilled</span>
+            </div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar-fill" style="width: 86%;"></div>
+            </div>
+            <p class="skill-desc">Interactive dashboarding, KPI telemetry, automated management reporting.</p>
+          </div>
+
+          <!-- GANs & Virtual Try-On -->
+          <div class="skill-card glass-panel" data-category="ai-ml">
+            <div class="skill-top">
+              <div class="skill-icon text-purple"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+              <div class="skill-info">
+                <h4>GANs & Image Synthesis</h4>
+                <span>Generative Adversarial Networks</span>
+              </div>
+              <span class="skill-level-badge">Specialized</span>
+            </div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar-fill" style="width: 85%;"></div>
+            </div>
+            <p class="skill-desc">Image-to-image translation, virtual apparel draping, model evaluation.</p>
+          </div>
+
+          <!-- Core Java -->
+          <div class="skill-card glass-panel" data-category="programming">
+            <div class="skill-top">
+              <div class="skill-icon text-yellow"><i class="fa-brands fa-java"></i></div>
+              <div class="skill-info">
+                <h4>Core Java</h4>
+                <span>OOP & Algorithmic Foundations</span>
+              </div>
+              <span class="skill-level-badge">Solid</span>
+            </div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar-fill" style="width: 82%;"></div>
+            </div>
+            <p class="skill-desc">Data structures, object-oriented design, algorithm design, backend logic.</p>
+          </div>
+
+          <!-- Pandas & NumPy & Scikit-Learn -->
+          <div class="skill-card glass-panel" data-category="tools analytics">
+            <div class="skill-top">
+              <div class="skill-icon text-cyan"><i class="fa-solid fa-square-root-variable"></i></div>
+              <div class="skill-info">
+                <h4>Pandas, NumPy, Scikit-Learn</h4>
+                <span>Scientific Python Stack</span>
+              </div>
+              <span class="skill-level-badge">Proficient</span>
+            </div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar-fill" style="width: 94%;"></div>
+            </div>
+            <p class="skill-desc">Supervised & unsupervised learning, matrix operations, statistical transformations.</p>
+          </div>
+
+          <!-- Web Technologies & React.js -->
+          <div class="skill-card glass-panel" data-category="web">
+            <div class="skill-top">
+              <div class="skill-icon text-purple"><i class="fa-brands fa-react"></i></div>
+              <div class="skill-info">
+                <h4>HTML5, CSS3, JS & React.js</h4>
+                <span>Full-Stack Web Development</span>
+              </div>
+              <span class="skill-level-badge">Skilled</span>
+            </div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar-fill" style="width: 88%;"></div>
+            </div>
+            <p class="skill-desc">Responsive UIs, interactive dashboards, REST API integration, frontend state.</p>
+          </div>
+
+          <!-- Git & GitHub -->
+          <div class="skill-card glass-panel" data-category="tools">
+            <div class="skill-top">
+              <div class="skill-icon text-green"><i class="fa-brands fa-git-alt"></i></div>
+              <div class="skill-info">
+                <h4>Git & GitHub</h4>
+                <span>Version Control & Collaboration</span>
+              </div>
+              <span class="skill-level-badge">Proficient</span>
+            </div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar-fill" style="width: 90%;"></div>
+            </div>
+            <p class="skill-desc">Branching workflows, repository management, collaborative code reviews.</p>
+          </div>
+
+          <!-- 3D Anthropometry & SMPL Models -->
+          <div class="skill-card glass-panel" data-category="ai-ml">
+            <div class="skill-top">
+              <div class="skill-icon text-cyan"><i class="fa-solid fa-cube"></i></div>
+              <div class="skill-info">
+                <h4>3D Anthropometry & Mesh</h4>
+                <span>Digital Human Body Fitting</span>
+              </div>
+              <span class="skill-level-badge">Specialized</span>
+            </div>
+            <div class="skill-bar-bg">
+              <div class="skill-bar-fill" style="width: 91%;"></div>
+            </div>
+            <p class="skill-desc">Parametric body measurements, apparel size recommendation algorithms.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Professional Experience Timeline -->
+    <section id="experience" class="section experience-section">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag"><i class="fa-solid fa-briefcase"></i> Work History</span>
+          <h2 class="section-title">Professional <span class="gradient-text">Experience</span></h2>
+          <p class="section-subtitle">
+            A track record of high-impact contributions across EdTech platforms, AI innovation labs, and enterprise systems.
+          </p>
+        </div>
+
+        <div class="timeline">
+          <!-- Role 1: 21K School -->
+          <div class="timeline-item">
+            <div class="timeline-dot current"></div>
+            <div class="timeline-card glass-panel">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="role-title">Technical Support Executive</h3>
+                  <h4 class="company-name text-cyan"><i class="fa-solid fa-building"></i> 21K School, Bangalore</h4>
+                </div>
+                <div class="role-date-badge current">May 2026 – Present</div>
+              </div>
+              <p class="role-summary">
+                Supporting mission-critical technical operations, troubleshooting, and platform stability for a leading EdTech online education ecosystem.
+              </p>
+              <ul class="role-points">
+                <li>Managing end-to-end technical incident triage and operational support for real-time online learning platforms.</li>
+                <li>Diagnosing and resolving system bottlenecks, authentication issues, and user workflow blockers to ensure high service availability.</li>
+                <li>Collaborating with engineering teams to document bug patterns and optimize platform usability.</li>
+              </ul>
+              <div class="tech-tags">
+                <span class="tag">EdTech Platform</span>
+                <span class="tag">Technical Support</span>
+                <span class="tag">Operations</span>
+                <span class="tag">Troubleshooting</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Role 2: Maskan Technologies -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card glass-panel highlight-border">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="role-title">AI Developer</h3>
+                  <h4 class="company-name text-purple"><i class="fa-solid fa-microchip"></i> Maskan Technologies, Bangalore</h4>
+                </div>
+                <div class="role-date-badge">Nov 2025 – May 2026</div>
+              </div>
+              <p class="role-summary">
+                Pioneered end-to-end AI/ML solutions in Python for textile and fashion tech, engineering groundbreaking 2D-to-3D Human Body Reconstruction and GAN-based Virtual Try-On systems.
+              </p>
+              <ul class="role-points">
+                <li><strong>2D-to-3D Human Reconstruction:</strong> Architected deep learning pipelines using PyTorch, OpenCV, CNN architectures, and SMPL models for photorealistic 3D human body reconstruction from single/multi 2D inputs.</li>
+                <li><strong>OpenCV Video Preprocessing:</strong> Built an automated preprocessing pipeline with OpenCV & NumPy to extract keyframes and synthesize high-density multi-view datasets, substantially boosting 3D model accuracy.</li>
+                <li><strong>3D Anthropometry Extraction:</strong> Extracted precise parametric human body measurements using Pandas, Python, and SQL to calculate exact apparel sizing and fit recommendations.</li>
+                <li><strong>GAN Virtual Try-On:</strong> Developed image-to-image generative translation models for cloth draping, conducting extensive data preprocessing, validation, and hyperparameter tuning.</li>
+                <li><strong>Full-Stack Model Deployment:</strong> Integrated deep learning inference APIs into web applications, streamlining full-stack communication and automated testing.</li>
+              </ul>
+              <div class="tech-tags">
+                <span class="tag">Python</span>
+                <span class="tag">PyTorch</span>
+                <span class="tag">OpenCV</span>
+                <span class="tag">SMPL 3D Models</span>
+                <span class="tag">GANs</span>
+                <span class="tag">CNN</span>
+                <span class="tag">Anthropometry</span>
+                <span class="tag">Pandas</span>
+                <span class="tag">SQL</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Role 3: Tech Avant Garde -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card glass-panel">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="role-title">Software Support Engineer</h3>
+                  <h4 class="company-name text-green"><i class="fa-solid fa-server"></i> Tech Avant Garde, Bangalore</h4>
+                </div>
+                <div class="role-date-badge">Jul 2025 – Nov 2025</div>
+              </div>
+              <p class="role-summary">
+                Contributed to large-scale EdTech & HealthTech digital transformation programs spanning hybrid learning, STEM/STEAM, ERP portals, and fee management systems.
+              </p>
+              <ul class="role-points">
+                <li><strong>SQL Backend Analytics:</strong> Executed in-depth database queries and transaction auditing to resolve operational bugs and ensure flawless academic/financial data consistency.</li>
+                <li><strong>ETL & Data Transformation:</strong> Performed large-scale data extraction, cleansing, and normalization to streamline institutional onboarding, client reporting, and backup management.</li>
+                <li><strong>Deployment & System Testing:</strong> Assisted product teams in regression testing, staging verification, and deployment rollouts for ERP platform updates.</li>
+                <li><strong>SLA Management:</strong> Resolved L1/L2 support tickets within strict SLA timelines, performing root cause analyses on escalated incident reports.</li>
+              </ul>
+              <div class="tech-tags">
+                <span class="tag">SQL Database Analysis</span>
+                <span class="tag">ERP Systems</span>
+                <span class="tag">ETL & Cleaning</span>
+                <span class="tag">EdTech & HealthTech</span>
+                <span class="tag">SLA Ticketing</span>
+                <span class="tag">Data Verification</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Projects Showcase -->
+    <section id="projects" class="section projects-section">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag"><i class="fa-solid fa-diagram-project"></i> Portfolio Showcase</span>
+          <h2 class="section-title">Featured <span class="gradient-text">Engineering Projects</span></h2>
+          <p class="section-subtitle">
+            A showcase of production-ready machine learning solutions, data analytics platforms, and intelligent IoT systems.
+          </p>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Project 1: GAN Virtual Try-on -->
+          <div class="project-card glass-panel">
+            <div class="project-img-wrapper">
+              <img src="assets/tryon_preview.jpg" alt="2D-to-3D Human Reconstruction and GAN Virtual Try-On" class="project-img" />
+              <div class="project-overlay">
+                <button class="btn btn-primary btn-sm project-modal-trigger" data-project="tryon">
+                  <i class="fa-solid fa-maximize"></i> View Deep Dive
+                </button>
+              </div>
+              <span class="project-badge badge-ai">Computer Vision & AI</span>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">2D-to-3D Human Reconstruction & GAN Virtual Try-On</h3>
+              <p class="project-desc">
+                Pioneered an end-to-end computer vision pipeline converting 2D camera feeds into SMPL parametric 3D body meshes with automated anthropometric sizing and GAN garment synthesis.
+              </p>
+              <div class="project-highlights">
+                <div><strong>98.6%</strong><span>Keypoint Accuracy</span></div>
+                <div><strong>18ms</strong><span>Inference Latency</span></div>
+                <div><strong>SMPL-X</strong><span>3D Parametric Mesh</span></div>
+              </div>
+              <div class="project-tech">
+                <span>Python</span>
+                <span>PyTorch</span>
+                <span>OpenCV</span>
+                <span>SMPL Models</span>
+                <span>GAN</span>
+                <span>NumPy</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2: Data Analytics & ERP Dashboard -->
+          <div class="project-card glass-panel">
+            <div class="project-img-wrapper">
+              <img src="assets/analytics_dashboard.jpg" alt="Enterprise Data Analytics & Executive Dashboard Suite" class="project-img" />
+              <div class="project-overlay">
+                <button class="btn btn-primary btn-sm project-modal-trigger" data-project="analytics">
+                  <i class="fa-solid fa-maximize"></i> View Deep Dive
+                </button>
+              </div>
+              <span class="project-badge badge-data">Data Analytics & BI</span>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Enterprise ERP Analytics & Executive Dashboard Suite</h3>
+              <p class="project-desc">
+                Comprehensive data analytics, SQL validation, and executive dashboarding suite built to monitor multi-institutional EdTech transactions, attendance trends, and retention rates.
+              </p>
+              <div class="project-highlights">
+                <div><strong>125k+</strong><span>Records Validated</span></div>
+                <div><strong>99.8%</strong><span>Data Consistency</span></div>
+                <div><strong>SQL + BI</strong><span>Automated Reports</span></div>
+              </div>
+              <div class="project-tech">
+                <span>SQL</span>
+                <span>Python</span>
+                <span>Pandas</span>
+                <span>Power BI</span>
+                <span>Tableau</span>
+                <span>EDA</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3: IoT EV Wireless Charging -->
+          <div class="project-card glass-panel">
+            <div class="project-img-wrapper">
+              <img src="assets/ev_charging_iot.jpg" alt="IoT-Based Wireless Charging for Electric Vehicles" class="project-img" />
+              <div class="project-overlay">
+                <button class="btn btn-primary btn-sm project-modal-trigger" data-project="iot">
+                  <i class="fa-solid fa-maximize"></i> View Deep Dive
+                </button>
+              </div>
+              <span class="project-badge badge-iot">IoT & Embedded Systems</span>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">IoT Wireless EV Charging & Automated Billing</h3>
+              <p class="project-desc">
+                Major Engineering Capstone: An intelligent wireless power transmission system for EVs utilizing magnetic resonance coils paired with RFID-based automated payment processing.
+              </p>
+              <div class="project-highlights">
+                <div><strong>RFID</strong><span>Automated Billing</span></div>
+                <div><strong>IoT</strong><span>Cloud Telemetry</span></div>
+                <div><strong>Hardware</strong><span>Arduino IDE</span></div>
+              </div>
+              <div class="project-tech">
+                <span>Arduino IDE</span>
+                <span>IoT Sensors</span>
+                <span>RFID</span>
+                <span>Embedded C</span>
+                <span>Hardware</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 4: Hospital Management System -->
+          <div class="project-card glass-panel">
+            <div class="project-img-wrapper hospital-wrapper">
+              <div class="hospital-banner-art">
+                <i class="fa-solid fa-hospital-user fa-3x text-cyan"></i>
+                <span>Telehealth & Clinical Administration</span>
+              </div>
+              <div class="project-overlay">
+                <button class="btn btn-primary btn-sm project-modal-trigger" data-project="hospital">
+                  <i class="fa-solid fa-maximize"></i> View Deep Dive
+                </button>
+              </div>
+              <span class="project-badge badge-web">Full Stack Web</span>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Hospital Management & Patient Portal</h3>
+              <p class="project-desc">
+                Full-stack web application engineered to manage electronic health records, doctor appointment scheduling, automated patient billing, and hospital staff directories.
+              </p>
+              <div class="project-highlights">
+                <div><strong>MySQL</strong><span>Relational Schema</span></div>
+                <div><strong>CRUD</strong><span>Role-based Access</span></div>
+                <div><strong>Web UI</strong><span>Responsive Layout</span></div>
+              </div>
+              <div class="project-tech">
+                <span>MySQL</span>
+                <span>HTML5</span>
+                <span>CSS3</span>
+                <span>JavaScript</span>
+                <span>PHP/Backend</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education & Certifications -->
+    <section id="education" class="section education-section">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag"><i class="fa-solid fa-graduation-cap"></i> Academic Credentials</span>
+          <h2 class="section-title">Education & <span class="gradient-text">Certifications</span></h2>
+          <p class="section-subtitle">
+            Formal computer science engineering degree complemented by specialized professional development programs.
+          </p>
+        </div>
+
+        <div class="edu-grid">
+          <!-- Degree -->
+          <div class="edu-card glass-panel highlight-border">
+            <div class="edu-badge"><i class="fa-solid fa-award"></i> Degree</div>
+            <div class="edu-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+            <div class="edu-content">
+              <h3>B.E. in Computer Science and Engineering</h3>
+              <h4 class="institute text-cyan">Brindavan College of Engineering</h4>
+              <p class="university">Visvesvaraya Technological University (VTU) — Bangalore</p>
+              <div class="edu-meta">
+                <span class="grade"><i class="fa-solid fa-star text-yellow"></i> CGPA: <strong>8.1 / 10</strong></span>
+                <span class="date"><i class="fa-regular fa-calendar"></i> Graduated: May 2024</span>
+              </div>
+              <p class="edu-description">
+                Core coursework: Data Structures & Algorithms, Database Management Systems (DBMS), Operating Systems, Computer Networks, Machine Learning, and Software Engineering.
+              </p>
+            </div>
+          </div>
+
+          <!-- Certifications Container -->
+          <div class="cert-column">
+            <!-- Cert 1 -->
+            <div class="cert-card glass-panel">
+              <div class="cert-icon text-green"><i class="fa-brands fa-python"></i></div>
+              <div>
+                <h4>Python & Data Science Professional</h4>
+                <p class="cert-provider">Konigtronics Pvt Ltd</p>
+                <span class="cert-date"><i class="fa-regular fa-calendar"></i> Sept 2024 – Oct 2024</span>
+                <p class="cert-desc">Intensive specialization in Python for scientific computing, statistical analysis, Pandas, NumPy, Scikit-learn, and predictive modeling.</p>
+              </div>
+            </div>
+
+            <!-- Cert 2 -->
+            <div class="cert-card glass-panel">
+              <div class="cert-icon text-purple"><i class="fa-solid fa-code"></i></div>
+              <div>
+                <h4>Full Stack Developer Certification</h4>
+                <p class="cert-provider">Global Quest Technologies</p>
+                <span class="cert-date"><i class="fa-regular fa-calendar"></i> Feb 2024 – Jun 2024</span>
+                <p class="cert-desc">Comprehensive program covering frontend UI engineering, JavaScript/React, relational databases, backend server architectures, and API design.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact & Connect Section -->
+    <section id="contact" class="section contact-section">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag highlight-tag"><i class="fa-solid fa-paper-plane"></i> Get In Touch</span>
+          <h2 class="section-title">Let's Build Something <span class="gradient-text">Exceptional Together</span></h2>
+          <p class="section-subtitle">
+            Whether you are hiring for an AI/ML or Data Analyst role, seeking collaboration on computer vision projects, or discussing data solutions, I'd love to connect!
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Contact Info Cards -->
+          <div class="contact-cards-column">
+            <!-- Email -->
+            <div class="contact-info-card glass-panel">
+              <div class="card-icon text-cyan"><i class="fa-solid fa-envelope"></i></div>
+              <div class="card-content">
+                <span class="info-label">Email Directly</span>
+                <a href="mailto:ayeshasi2128@gmail.com" class="info-val">ayeshasi2128@gmail.com</a>
+              </div>
+              <button class="btn btn-glass btn-sm" data-copy="ayeshasi2128@gmail.com" title="Copy Email">
+                <i class="fa-solid fa-copy"></i> Copy
+              </button>
+            </div>
+
+            <!-- Phone -->
+            <div class="contact-info-card glass-panel">
+              <div class="card-icon text-purple"><i class="fa-solid fa-phone"></i></div>
+              <div class="card-content">
+                <span class="info-label">Phone / WhatsApp</span>
+                <a href="tel:+916366302944" class="info-val">+91-6366302944</a>
+              </div>
+              <button class="btn btn-glass btn-sm" data-copy="+916366302944" title="Copy Phone">
+                <i class="fa-solid fa-copy"></i> Copy
+              </button>
+            </div>
+
+            <!-- LinkedIn -->
+            <div class="contact-info-card glass-panel">
+              <div class="card-icon text-cyan"><i class="fa-brands fa-linkedin-in"></i></div>
+              <div class="card-content">
+                <span class="info-label">LinkedIn</span>
+                <a href="https://linkedin.com/in/ayesha-nikhath-s" target="_blank" rel="noopener noreferrer" class="info-val">linkedin.com/in/ayesha-nikhath-s</a>
+              </div>
+              <a href="https://linkedin.com/in/ayesha-nikhath-s" target="_blank" rel="noopener noreferrer" class="btn btn-glass btn-sm" title="Visit Profile">
+                <i class="fa-solid fa-external-link"></i> Visit
+              </a>
+            </div>
+
+            <!-- Location -->
+            <div class="contact-info-card glass-panel">
+              <div class="card-icon text-green"><i class="fa-solid fa-location-dot"></i></div>
+              <div class="card-content">
+                <span class="info-label">Current Location</span>
+                <span class="info-val">Bangalore, Karnataka, India</span>
+              </div>
+              <span class="badge-status">Open to Remote & On-site</span>
+            </div>
+          </div>
+
+          <!-- Interactive Message Form -->
+          <div class="contact-form-wrapper glass-panel">
+            <h3 class="form-title"><i class="fa-solid fa-message text-cyan"></i> Send a Direct Message</h3>
+            <p class="form-subtitle">Messages are sent directly to Ayesha Nikhath S.</p>
+
+            <form id="contact-form" class="contact-form" novalidate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="contact-name">Your Full Name <span class="required">*</span></label>
+                  <input type="text" id="contact-name" name="name" class="form-control" placeholder="Jane Doe" required />
+                  <span class="form-error" id="name-error"></span>
+                </div>
+                <div class="form-group">
+                  <label for="contact-email">Your Work Email <span class="required">*</span></label>
+                  <input type="email" id="contact-email" name="email" class="form-control" placeholder="jane@company.com" required />
+                  <span class="form-error" id="email-error"></span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-subject">Subject / Opportunity Title <span class="required">*</span></label>
+                <input type="text" id="contact-subject" name="subject" class="form-control" placeholder="Discussion: AI/ML or Data Analyst Role" required />
+                <span class="form-error" id="subject-error"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-message">Message <span class="required">*</span></label>
+                <textarea id="contact-message" name="message" rows="5" class="form-control" placeholder="Hello Ayesha, I reviewed your computer vision and data analytics work..." required></textarea>
+                <span class="form-error" id="message-error"></span>
+              </div>
+
+              <button type="submit" id="submit-btn" class="btn btn-primary btn-block">
+                <i class="fa-solid fa-paper-plane"></i> Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <span class="brand-text">Ayesha Nikhath S</span>
+        <p>Data Analyst & AI/ML Professional | Bangalore, Karnataka</p>
+      </div>
+
+      <div class="footer-socials">
+        <a href="https://linkedin.com/in/ayesha-nikhath-s" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="mailto:ayeshasi2128@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+        <a href="tel:+916366302944" aria-label="Phone"><i class="fa-solid fa-phone"></i></a>
+      </div>
+
+      <div class="footer-copy">
+        <p>&copy; 2026 Ayesha Nikhath S. Built with modern AI-driven Web Architecture.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Resume Preview Modal -->
+  <div id="resume-modal" class="modal" aria-hidden="true" role="dialog">
+    <div class="modal-backdrop"></div>
+    <div class="modal-dialog glass-panel">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <i class="fa-solid fa-file-pdf text-cyan"></i>
+          <h3>Ayesha Nikhath S — Professional Resume</h3>
+        </div>
+        <div class="modal-actions">
+          <button id="print-resume-btn" class="btn btn-glass btn-sm"><i class="fa-solid fa-print"></i> Print / Save PDF</button>
+          <button id="close-resume-modal" class="modal-close-btn" aria-label="Close modal">&times;</button>
+        </div>
+      </div>
+
+      <div class="modal-body resume-print-view" id="resume-content">
+        <div class="resume-header">
+          <h1>Ayesha Nikhath S</h1>
+          <h2>Data Analyst | AI/ML Professional</h2>
+          <div class="resume-contact-bar">
+            <span><i class="fa-solid fa-location-dot"></i> Bangalore, Karnataka</span>
+            <span><i class="fa-solid fa-phone"></i> +91-6366302944</span>
+            <span><i class="fa-solid fa-envelope"></i> ayeshasi2128@gmail.com</span>
+            <span><i class="fa-brands fa-linkedin"></i> linkedin.com/in/ayesha-nikhath-s</span>
+          </div>
+        </div>
+
+        <hr class="resume-hr" />
+
+        <div class="resume-section">
+          <h3>Professional Summary</h3>
+          <p>
+            Aspiring Data Analyst and AI/ML professional with hands-on experience in Python, SQL, data analysis, and machine learning workflows. Skilled in developing computer vision and AI/ML solutions using OpenCV, PyTorch, Pandas, and deep learning techniques for data-driven applications. Experienced in data preprocessing, validation, exploratory data analysis (EDA), model evaluation, workflow optimization, and backend data analysis. Strong analytical and problem-solving abilities with a focus on building accurate, scalable, and user-focused AI/ML solutions.
+          </p>
+        </div>
+
+        <div class="resume-section">
+          <h3>Technical Skills</h3>
+          <p><strong>Programming & Query Languages:</strong> Python, SQL, Core Java</p>
+          <p><strong>Data Analytics & Visualization:</strong> Data Analysis, Data Cleaning, Data Visualization, Data Preprocessing, EDA, Dashboarding, Reporting, Statistics, Excel, Power BI, Tableau</p>
+          <p><strong>Machine Learning & AI:</strong> Supervised Learning, Unsupervised Learning, Model Training & Evaluation, Computer Vision, Image Preprocessing, Human Pose Estimation, Image Segmentation, Feature Detection, Deep Learning, CNN, Model Optimization and Tuning</p>
+          <p><strong>Libraries & Tools:</strong> Pandas, NumPy, OpenCV, PyTorch (Basics), TensorFlow (Basics), Scikit-learn, Matplotlib, Git, GitHub</p>
+          <p><strong>Web Technologies:</strong> HTML, CSS, JavaScript, React.js</p>
+        </div>
+
+        <div class="resume-section">
+          <h3>Professional Experience</h3>
+          <div class="resume-exp-item">
+            <div class="exp-title-row">
+              <strong>Technical Support Executive — 21K School, Bangalore</strong>
+              <span>May 2026 – Present</span>
+            </div>
+            <ul>
+              <li>Supporting technical operations and troubleshooting for an EdTech platform.</li>
+            </ul>
+          </div>
+
+          <div class="resume-exp-item">
+            <div class="exp-title-row">
+              <strong>AI Developer — Maskan Technologies, Bangalore</strong>
+              <span>Nov 2025 – May 2026</span>
+            </div>
+            <ul>
+              <li>Developed end-to-end AI/ML solutions in Python for textile-focused applications, including 2D-to-3D Human Reconstruction, Body Measurement Extraction, and Virtual Try-On systems.</li>
+              <li>Built an image preprocessing pipeline using OpenCV and NumPy to extract video frames and generate multi-view datasets, improving 3D reconstruction accuracy.</li>
+              <li>Implemented deep learning pipelines using PyTorch, OpenCV, CNN architectures, and SMPL models for accurate 3D human body reconstruction from 2D inputs.</li>
+              <li>Applied 3D anthropometry techniques and data analysis using Pandas, Python, and SQL to extract body measurements for apparel size estimation and fitting.</li>
+              <li>Developed a GAN-based Virtual Try-On system using image-to-image transformation, and performed data preprocessing, validation, and model evaluation to improve system performance and prediction accuracy.</li>
+              <li>Assisted in frontend and backend development for full-stack applications, supporting ML model integration, debugging, and workflow automation.</li>
+            </ul>
+          </div>
+
+          <div class="resume-exp-item">
+            <div class="exp-title-row">
+              <strong>Software Support Engineer — Tech Avant Garde, Bangalore</strong>
+              <span>Jul 2025 – Nov 2025</span>
+            </div>
+            <ul>
+              <li>Worked on a large-scale EdTech and HealthTech digital transformation project covering hybrid learning, digital literacy, STEM/STEAM, and skill development programs, including ERP-based platforms and fee management systems.</li>
+              <li>Analyzed ERP backend data using SQL to troubleshoot issues, validate transactions, and ensure accuracy across academic and administrative workflows.</li>
+              <li>Performed data extraction, cleaning, and transformation for reporting and onboarding; supported feature deployments, system testing, and client data/backup management.</li>
+              <li>Handled L1/L2 support tickets within SLA timelines, escalating complex cases to development teams.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="resume-section">
+          <h3>Academic Projects</h3>
+          <div class="resume-exp-item">
+            <strong>IoT-Based Wireless Charging for Electric Vehicles Using Arduino IDE — Major Project</strong>
+            <p><em>Technologies: Arduino IDE, IoT, RFID</em></p>
+            <ul>
+              <li>Developed an IoT-based wireless charging system for EVs with transmitting/receiving coils and RFID-based automated payment processing.</li>
+            </ul>
+          </div>
+
+          <div class="resume-exp-item">
+            <strong>Hospital Management System — Mini Project</strong>
+            <p><em>Technologies: MySQL, HTML, CSS, JavaScript</em></p>
+            <ul>
+              <li>Developed a web-based hospital management system to manage patient records, appointments, billing, and staff information.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="resume-section">
+          <h3>Training & Certifications</h3>
+          <ul>
+            <li>Full Stack Developer — Global Quest Technologies (Feb 2024 – Jun 2024)</li>
+            <li>Python & Data Science — Konigtronics Pvt Ltd (Sept 2024 – Oct 2024)</li>
+          </ul>
+        </div>
+
+        <div class="resume-section">
+          <h3>Education</h3>
+          <div class="exp-title-row">
+            <strong>B.E. in Computer Science and Engineering</strong>
+            <span>May 2024</span>
+          </div>
+          <p>Brindavan College of Engineering, Visvesvaraya Technological University — Bangalore | <strong>CGPA: 8.1</strong></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Project Details Modal -->
+  <div id="project-modal" class="modal" aria-hidden="true" role="dialog">
+    <div class="modal-backdrop"></div>
+    <div class="modal-dialog glass-panel modal-lg">
+      <div class="modal-header">
+        <h3 id="modal-project-title">Project Architecture Deep Dive</h3>
+        <button id="close-project-modal" class="modal-close-btn" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="modal-body" id="modal-project-body">
+        <!-- Injected via JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
