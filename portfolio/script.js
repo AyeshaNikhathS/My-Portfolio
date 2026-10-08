@@ -1,215 +1,17 @@
-/**
+﻿/**
  * AYESHA NIKHATH S - PORTFOLIO INTERACTIVE CORE
  * Features:
- * - Neural particle canvas background
- * - Dynamic typewriter effect
- * - Interactive AI & Data Lab (3D SMPL simulator & dynamic SQL/EDA chart renderer)
- * - Skills category filtering
  * - Project deep-dive modals
  * - Quick copy-to-clipboard & toast notification system
  * - Form validation and smooth scroll spy
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  initNeuralCanvas();
-  initTypewriter();
-  initSkillsFilter();
-  initInteractiveLab();
   initModals();
   initClipboardAndToasts();
   initContactForm();
   initNavigation();
 });
-
-/* ==========================================================================
-   1. NEURAL PARTICLE CANVAS BACKGROUND
-   ========================================================================== */
-function initNeuralCanvas() {
-  const canvas = document.getElementById('neural-canvas');
-  if (!canvas) return;
-  const ctx = canvas.getContext('2d');
-
-  let width = (canvas.width = window.innerWidth);
-  let height = (canvas.height = window.innerHeight);
-
-  const particles = [];
-  const particleCount = Math.min(Math.floor((width * height) / 16000), 75);
-  const maxDistance = 140;
-
-  let mouse = { x: null, y: null, radius: 150 };
-
-  window.addEventListener('resize', () => {
-    width = canvas.width = window.innerWidth;
-    height = canvas.height = window.innerHeight;
-  });
-
-  window.addEventListener('mousemove', (e) => {
-    mouse.x = e.clientX;
-    mouse.y = e.clientY;
-  });
-
-  window.addEventListener('mouseout', () => {
-    mouse.x = null;
-    mouse.y = null;
-  });
-
-  class Particle {
-    constructor() {
-      this.x = Math.random() * width;
-      this.y = Math.random() * height;
-      this.vx = (Math.random() - 0.5) * 0.8;
-      this.vy = (Math.random() - 0.5) * 0.8;
-      this.radius = Math.random() * 2 + 1.2;
-      this.color = Math.random() > 0.4 ? '#00f2fe' : '#7f00ff';
-    }
-
-    update() {
-      this.x += this.vx;
-      this.y += this.vy;
-
-      if (this.x < 0 || this.x > width) this.vx *= -1;
-      if (this.y < 0 || this.y > height) this.vy *= -1;
-
-      // Mouse interactivity
-      if (mouse.x !== null && mouse.y !== null) {
-        const dx = mouse.x - this.x;
-        const dy = mouse.y - this.y;
-        const dist = Math.hypot(dx, dy);
-        if (dist < mouse.radius) {
-          const force = (mouse.radius - dist) / mouse.radius;
-          this.x -= (dx / dist) * force * 2;
-          this.y -= (dy / dist) * force * 2;
-        }
-      }
-    }
-
-    draw() {
-      ctx.beginPath();
-      ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-      ctx.fillStyle = this.color;
-      ctx.shadowBlur = 8;
-      ctx.shadowColor = this.color;
-      ctx.fill();
-      ctx.shadowBlur = 0;
-    }
-  }
-
-  for (let i = 0; i < particleCount; i++) {
-    particles.push(new Particle());
-  }
-
-  function animate() {
-    ctx.clearRect(0, 0, width, height);
-
-    for (let i = 0; i < particles.length; i++) {
-      particles[i].update();
-      particles[i].draw();
-
-      for (let j = i + 1; j < particles.length; j++) {
-        const dx = particles[i].x - particles[j].x;
-        const dy = particles[i].y - particles[j].y;
-        const dist = Math.hypot(dx, dy);
-
-        if (dist < maxDistance) {
-          const alpha = 1 - dist / maxDistance;
-          ctx.beginPath();
-          ctx.moveTo(particles[i].x, particles[i].y);
-          ctx.lineTo(particles[j].x, particles[j].y);
-          ctx.strokeStyle = `rgba(0, 242, 254, ${alpha * 0.25})`;
-          ctx.lineWidth = 0.8;
-          ctx.stroke();
-        }
-      }
-    }
-
-    requestAnimationFrame(animate);
-  }
-
-  animate();
-}
-
-/* ==========================================================================
-   2. TYPEWRITER ANIMATION
-   ========================================================================== */
-function initTypewriter() {
-  const element = document.getElementById('typewriter-text');
-  if (!element) return;
-
-  const roles = [
-    'Data Analyst & AI/ML Professional',
-    '2D-to-3D Human Reconstruction & SMPL Meshes',
-    'Computer Vision & OpenCV Frame Pipelines',
-    'GAN-Based Virtual Try-On Architectures',
-    'SQL Backend Analytics & ERP Validation',
-    'Power BI & Tableau KPI Dashboards'
-  ];
-
-  let roleIdx = 0;
-  let charIdx = 0;
-  let isDeleting = false;
-  let delay = 100;
-
-  function tick() {
-    const current = roles[roleIdx];
-
-    if (isDeleting) {
-      element.textContent = current.substring(0, charIdx - 1);
-      charIdx--;
-      delay = 40;
-    } else {
-      element.textContent = current.substring(0, charIdx + 1);
-      charIdx++;
-      delay = 85;
-    }
-
-    if (!isDeleting && charIdx === current.length) {
-      isDeleting = true;
-      delay = 1800; // Pause at end of text
-    } else if (isDeleting && charIdx === 0) {
-      isDeleting = false;
-      roleIdx = (roleIdx + 1) % roles.length;
-      delay = 400;
-    }
-
-    setTimeout(tick, delay);
-  }
-
-  tick();
-}
-
-/* ==========================================================================
-   3. SKILLS CATEGORY FILTERING
-   ========================================================================== */
-function initSkillsFilter() {
-  const filterBtns = document.querySelectorAll('.skills-filter-tabs .filter-btn');
-  const skillCards = document.querySelectorAll('.skills-grid .skill-card');
-
-  filterBtns.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      filterBtns.forEach((b) => b.classList.remove('active'));
-      btn.classList.add('active');
-
-      const filter = btn.getAttribute('data-filter');
-
-      skillCards.forEach((card) => {
-        const categories = card.getAttribute('data-category') || '';
-        if (filter === 'all' || categories.includes(filter)) {
-          card.style.display = 'block';
-          setTimeout(() => {
-            card.style.opacity = '1';
-            card.style.transform = 'translateY(0)';
-          }, 10);
-        } else {
-          card.style.opacity = '0';
-          card.style.transform = 'translateY(15px)';
-          setTimeout(() => {
-            card.style.display = 'none';
-          }, 200);
-        }
-      });
-    });
-  });
-}
 
 /* ==========================================================================
    4. INTERACTIVE AI & DATA LAB (SIMULATIONS & CHARTING)
@@ -1033,11 +835,18 @@ vertices = output.vertices.detach().cpu().numpy()</code></pre>
 };
 
 function initModals() {
+  const closeModal = (modal) => {
+    if (!modal) return;
+    modal.classList.remove('active');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  };
+
   // Resume Modal
   const resumeModal = document.getElementById('resume-modal');
-  const resumeTriggers = document.querySelectorAll('.open-resume-trigger, #resume-preview-btn');
+  const resumeTriggers = document.querySelectorAll('.open-resume-trigger');
   const closeResumeBtn = document.getElementById('close-resume-modal');
-  const printResumeBtn = document.getElementById('print-resume-btn');
+  const downloadResumeBtn = document.getElementById('download-resume-btn');
 
   resumeTriggers.forEach((btn) => {
     btn.addEventListener('click', () => {
@@ -1051,18 +860,36 @@ function initModals() {
 
   if (closeResumeBtn && resumeModal) {
     closeResumeBtn.addEventListener('click', () => {
-      resumeModal.classList.remove('active');
-      resumeModal.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = '';
+      closeModal(resumeModal);
     });
   }
 
-  if (printResumeBtn) {
-    printResumeBtn.addEventListener('click', () => {
-      window.print();
+  if (downloadResumeBtn) {
+    downloadResumeBtn.addEventListener('click', () => {
+      const resumeContent = document.getElementById('resume-content');
+      if (!resumeContent) return;
+      const resumeDocument = `<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Ayesha Nikhath S - Resume</title><style>body{margin:0;padding:40px;background:#f1f5f9;font-family:Arial,sans-serif;color:#1a202c}.resume{max-width:850px;margin:auto;padding:42px;background:#fff;line-height:1.5}h1{margin:0 0 4px}h2{color:#0070f3;font-size:18px}h3{border-bottom:2px solid #0f172a;padding-bottom:4px;text-transform:uppercase;font-size:15px}.resume-contact-bar{display:flex;flex-wrap:wrap;gap:18px;color:#475569;font-size:13px}.resume-section{margin-top:22px}.resume-section p,.resume-section li{font-size:14px;color:#334155}@media print{body{padding:0;background:#fff}.resume{max-width:none}}</style></head><body><main class="resume">${resumeContent.innerHTML}</main></body></html>`;
+      const downloadUrl = URL.createObjectURL(new Blob([resumeDocument], { type: 'text/html' }));
+      const link = document.createElement('a');
+      link.href = downloadUrl;
+      link.download = 'Ayesha-Nikhath-S-Resume.html';
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      URL.revokeObjectURL(downloadUrl);
+      showToast('Resume downloaded successfully.', 'success');
     });
   }
 
+  const skillFilters = document.querySelectorAll('.skill-filter');
+  const skillItems = document.querySelectorAll('.skills-list li');
+  skillFilters.forEach((filterButton) => {
+    filterButton.addEventListener('click', () => {
+      const selectedFilter = filterButton.dataset.filter;
+      skillFilters.forEach((button) => button.classList.toggle('active', button === filterButton));
+      skillItems.forEach((skill) => skill.classList.toggle('is-hidden', selectedFilter !== 'all' && skill.dataset.category !== selectedFilter));
+    });
+  });
   // Project Deep Dive Modal
   const projectModal = document.getElementById('project-modal');
   const modalProjectTitle = document.getElementById('modal-project-title');
@@ -1079,43 +906,29 @@ function initModals() {
         modalProjectBody.innerHTML = data.content;
         projectModal.classList.add('active');
         projectModal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
       }
     });
   });
 
   if (closeProjectBtn && projectModal) {
     closeProjectBtn.addEventListener('click', () => {
-      projectModal.classList.remove('active');
-      projectModal.setAttribute('aria-hidden', 'true');
+      closeModal(projectModal);
     });
   }
 
   // Close modals on clicking backdrop
   window.addEventListener('click', (e) => {
     if (e.target.classList.contains('modal-backdrop')) {
-      if (resumeModal) {
-        resumeModal.classList.remove('active');
-        document.body.style.overflow = '';
-      }
-      if (projectModal) {
-        projectModal.classList.remove('active');
-        document.body.style.overflow = '';
-      }
+      closeModal(e.target.closest('.modal'));
     }
   });
 
   // Close modals on Escape key
   window.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-      if (resumeModal) {
-        resumeModal.classList.remove('active');
-        document.body.style.overflow = '';
-      }
-      if (projectModal) {
-        projectModal.classList.remove('active');
-        document.body.style.overflow = '';
-      }
-    }
+    if (e.key !== 'Escape') return;
+    if (resumeModal?.classList.contains('active')) closeModal(resumeModal);
+    if (projectModal?.classList.contains('active')) closeModal(projectModal);
   });
 }
 
@@ -1130,11 +943,35 @@ function initClipboardAndToasts() {
       e.preventDefault();
       const textToCopy = btn.getAttribute('data-copy');
       if (textToCopy) {
-        navigator.clipboard.writeText(textToCopy).then(() => {
-          showToast(`Copied "${textToCopy}" to clipboard!`, 'success');
-        });
+        copyText(textToCopy)
+          .then(() => showToast(`Copied "${textToCopy}" to clipboard!`, 'success'))
+          .catch(() => showToast('Could not copy automatically. Please select and copy it manually.', 'error'));
       }
     });
+  });
+}
+
+function copyText(text) {
+  if (navigator.clipboard?.writeText) {
+    return navigator.clipboard.writeText(text);
+  }
+
+  return new Promise((resolve, reject) => {
+    const textArea = document.createElement('textarea');
+    textArea.value = text;
+    textArea.setAttribute('readonly', '');
+    textArea.style.position = 'fixed';
+    textArea.style.opacity = '0';
+    document.body.appendChild(textArea);
+    textArea.select();
+
+    try {
+      document.execCommand('copy') ? resolve() : reject(new Error('Copy command failed'));
+    } catch (error) {
+      reject(error);
+    } finally {
+      textArea.remove();
+    }
   });
 }
 
@@ -1297,19 +1134,21 @@ function initNavigation() {
 
   if (mobileToggle && navMenu) {
     mobileToggle.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
+      const isOpen = navMenu.classList.toggle('active');
+      mobileToggle.setAttribute('aria-expanded', String(isOpen));
     });
 
     navLinks.forEach((link) => {
       link.addEventListener('click', () => {
         navMenu.classList.remove('active');
+        mobileToggle.setAttribute('aria-expanded', 'false');
       });
     });
   }
 
   // Active section scroll spy
   const sections = document.querySelectorAll('section[id]');
-  window.addEventListener('scroll', () => {
+  const updateActiveNav = () => {
     const scrollY = window.pageYOffset;
 
     sections.forEach((section) => {
@@ -1326,5 +1165,11 @@ function initNavigation() {
         }
       }
     });
-  });
+  };
+
+  window.addEventListener('scroll', updateActiveNav, { passive: true });
+  updateActiveNav();
 }
+
+
+

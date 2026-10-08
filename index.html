@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ayesha Nikhath S | Data Analyst & AI/ML Professional</title>
-  <meta name="description" content="Portfolio of Ayesha Nikhath S - Data Analyst and AI/ML Professional specializing in Computer Vision, 2D-to-3D Human Reconstruction, Deep Learning, SQL, and Data Analytics." />
+  <meta name="description" content="Portfolio of Ayesha Nikhath S, a Data Analyst and AI/ML professional." />
   <meta name="keywords" content="Ayesha Nikhath S, Data Analyst, AI Developer, Machine Learning, Computer Vision, PyTorch, OpenCV, SQL, Power BI, Bangalore" />
   <meta name="author" content="Ayesha Nikhath S" />
 
@@ -26,25 +26,27 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Neural Particle Canvas -->
-  <canvas id="neural-canvas"></canvas>
 
+  <!-- BAckground connecting dots -->
+   <canvas id="particle-canvas"></canvas>
+
+  <!-- Background animation -->
+  <div class="bg-animation">
+  <span class="glow glow-1"></span>
+  <span class="glow glow-2"></span>
+  <span class="glow glow-3"></span>
+</div>
   <!-- Notification Toast Container -->
   <div id="toast-container" class="toast-container" aria-live="polite"></div>
 
   <!-- Navigation Bar -->
   <header class="header">
     <div class="nav-container">
-      <a href="#hero" class="nav-brand">
-        <span class="brand-badge"><i class="fa-solid fa-brain"></i></span>
-        <span class="brand-text">Ayesha<span class="gradient-text">.AI</span></span>
-      </a>
 
       <nav class="nav-menu" id="nav-menu">
         <ul class="nav-list">
           <li><a href="#about" class="nav-link"><i class="fa-solid fa-user-astronaut"></i> About</a></li>
           <li><a href="#skills" class="nav-link"><i class="fa-solid fa-microchip"></i> Skills</a></li>
-          <li><a href="#ai-lab" class="nav-link highlight-pill"><i class="fa-solid fa-flask-vial"></i> AI Lab</a></li>
           <li><a href="#experience" class="nav-link"><i class="fa-solid fa-briefcase"></i> Experience</a></li>
           <li><a href="#projects" class="nav-link"><i class="fa-solid fa-diagram-project"></i> Projects</a></li>
           <li><a href="#education" class="nav-link"><i class="fa-solid fa-graduation-cap"></i> Education</a></li>
@@ -53,13 +55,10 @@
       </nav>
 
       <div class="nav-actions">
-        <button id="resume-preview-btn" class="btn btn-glass btn-sm" title="Preview Resume">
-          <i class="fa-solid fa-file-lines"></i> <span>Resume</span>
-        </button>
         <a href="#contact" class="btn btn-primary btn-sm" title="Get in Touch">
           <i class="fa-solid fa-bolt"></i> <span>Get in Touch</span>
         </a>
-        <button id="mobile-toggle" class="mobile-toggle" aria-label="Toggle navigation menu">
+        <button id="mobile-toggle" class="mobile-toggle" aria-label="Toggle navigation menu" aria-controls="nav-menu" aria-expanded="false">
           <i class="fa-solid fa-bars"></i>
         </button>
       </div>
@@ -73,7 +72,7 @@
         <div class="hero-content">
           <div class="status-pill">
             <span class="pulse-dot"></span>
-            <span>Available for Data Analyst & AI/ML Opportunities</span>
+            <span>Available for Python, AI/ML & Data Analyst Opportunities</span>
             <span class="location-tag"><i class="fa-solid fa-location-dot"></i> Bangalore, IN</span>
           </div>
 
@@ -81,48 +80,21 @@
             Hi, I'm <span class="gradient-text glow-text">Ayesha Nikhath S</span>
           </h1>
 
-          <div class="typewriter-container">
-            <span class="typewriter-prefix">&gt; specializing in </span>
-            <span id="typewriter-text" class="typewriter-text"></span>
-            <span class="typewriter-cursor">|</span>
-          </div>
-
           <p class="hero-bio">
-            Data Analyst and AI/ML professional combining robust <strong>deep learning pipelines</strong> with 
-            <strong>enterprise backend data analytics</strong>. Experienced in building 2D-to-3D human reconstruction, 
-            GAN-driven virtual try-on systems, exploratory data analysis (EDA), and scalable SQL workflows.
+            <strong>AI/ML, Python and Data </strong> professional with 2+ years of combined experience, including 1+ year as a Software Support Engineer hands-on experience as an <strong>AI developer in machine learning and 
+            computer vision solutions, data analysis,</strong> and end-to-end data processing workflows. 
+            Experienced in <strong>Python, SQL, and deep learning techniques, </strong>
+            with practical exposure to image preprocessing, human pose estimation, 3D human reconstruction, 
+            body measurement extraction, image segmentation, and GAN-based virtual try-on projects. 
+            Skilled in <strong>data cleaning, preprocessing, validation, exploratory data analysis, model training, 
+            evaluation, and optimization.</strong> 
+            Experienced in <strong>analyzing backend and operational data,</strong> building reports using Excel, 
+            troubleshooting data and system issues, and supporting data-driven decision-making.
+            Strong analytical, problem-solving, and debugging abilities  
+            and practical AI/ML and data-driven solutions.
+      
           </p>
 
-          <div class="hero-cta-group">
-            <a href="#ai-lab" class="btn btn-primary">
-              <i class="fa-solid fa-play"></i> Launch AI Showcase
-            </a>
-            <a href="#projects" class="btn btn-glass">
-              <i class="fa-solid fa-folder-open"></i> View Work
-            </a>
-            <button id="copy-email-hero-btn" class="btn btn-outline" data-copy="ayeshasi2128@gmail.com">
-              <i class="fa-solid fa-copy"></i> Copy Email
-            </button>
-          </div>
-
-          <div class="hero-quick-stats">
-            <div class="stat-card">
-              <span class="stat-num" data-target="8.1">8.1</span>
-              <span class="stat-label">B.E. CSE CGPA</span>
-            </div>
-            <div class="stat-card">
-              <span class="stat-num" data-target="3">3+</span>
-              <span class="stat-label">Industry & Tech Roles</span>
-            </div>
-            <div class="stat-card">
-              <span class="stat-num">98.6%</span>
-              <span class="stat-label">Model Accuracy Benchmarks</span>
-            </div>
-            <div class="stat-card">
-              <span class="stat-num">2D &rarr; 3D</span>
-              <span class="stat-label">SMPL Mesh Reconstruction</span>
-            </div>
-          </div>
         </div>
 
         <div class="hero-visual">
@@ -186,23 +158,25 @@
       <div class="container">
         <div class="section-header text-center">
           <span class="section-tag"><i class="fa-solid fa-circle-info"></i> About Me</span>
-          <h2 class="section-title">Bridging <span class="gradient-text">Data Analytics</span> & <span class="gradient-text">Computer Vision</span></h2>
+          <h2 class="section-title">Where <span class="gradient-text">AI, Data</span> & <span class="gradient-text">Python</span> Come Together</h2>
           <p class="section-subtitle">
-            Transforming raw data into actionable intelligence and building computer vision systems that solve real-world industry challenges.
+            Turning data and ideas into practical AI solutions using Python, machine learning, and computer vision.
           </p>
         </div>
 
         <div class="about-grid">
-          <div class="about-card glass-panel">
+          <div class="about-card glass-panel highlight-card">
             <div class="card-icon"><i class="fa-solid fa-brain"></i></div>
             <h3>Computer Vision & AI</h3>
             <p>
-              Hands-on mastery in building 2D-to-3D human mesh reconstruction, video frame extraction pipelines with OpenCV & NumPy, and generative image-to-image GAN models for virtual try-on.
+              Hands-on experience building computer vision and deep learning solutions for 3D human reconstruction, body measurement extraction, and virtual try-on applications.
             </p>
             <ul class="about-feature-list">
-              <li><i class="fa-solid fa-check text-cyan"></i> SMPL 3D parametric human body modeling</li>
-              <li><i class="fa-solid fa-check text-cyan"></i> Pose estimation and keypoint detection</li>
-              <li><i class="fa-solid fa-check text-cyan"></i> Convolutional Neural Networks (CNNs) & PyTorch</li>
+              <li><i class="fa-solid fa-check text-cyan"></i> 2D-to-3D human reconstruction using PyTorch & SMPL</li>
+              <li><i class="fa-solid fa-check text-cyan"></i> Image preprocessing, frame extraction & multi-view data generation</li>
+              <li><i class="fa-solid fa-check text-cyan"></i> CNN-based pose, shape & feature estimation</li>
+              <li><i class="fa-solid fa-check text-cyan"></i> GAN-based image-to-image virtual try-on</li>
+              <li><i class="fa-solid fa-check text-cyan"></i> Model evaluation, tuning & performance optimization</li>
             </ul>
           </div>
 
@@ -210,25 +184,27 @@
             <div class="card-icon"><i class="fa-solid fa-chart-line"></i></div>
             <h3>Data Analytics & Business Intelligence</h3>
             <p>
-              Passionate about discovering patterns in complex datasets. Skilled in end-to-end data cleaning, exploratory data analysis (EDA), statistical evaluation, and interactive executive dashboards.
+              Skilled in transforming raw data into meaningful insights through data cleaning, analysis, validation, visualization, and reporting.
             </p>
             <ul class="about-feature-list">
-              <li><i class="fa-solid fa-check text-cyan"></i> Advanced SQL data validation & ETL workflows</li>
-              <li><i class="fa-solid fa-check text-cyan"></i> Power BI, Tableau, and Excel reporting</li>
-              <li><i class="fa-solid fa-check text-cyan"></i> Pandas & NumPy automated data preprocessing</li>
+              <li><i class="fa-solid fa-check text-cyan"></i> Python, SQL, Pandas & NumPy for data analysis</li>
+              <li><i class="fa-solid fa-check text-cyan"></i> Data cleaning, preprocessing, validation, Exploratory Data Analysis (EDA) & statistical analysis</li>
+              <li><i class="fa-solid fa-check text-cyan"></i> Excel, Power BI & Tableau reporting</li>
             </ul>
           </div>
 
-          <div class="about-card glass-panel">
+          <div class="about-card glass-panel highlight-card">
             <div class="card-icon"><i class="fa-solid fa-gears"></i></div>
-            <h3>Full-Stack & Systems Support</h3>
+            <h3>Python, Systems & Application Support</h3>
             <p>
-              Experienced in digital transformation, ERP backend database troubleshooting, SLA-driven ticketing, and integrating machine learning pipelines with full-stack applications.
+              Experience in Python-based workflows, ERP backend data analysis, application troubleshooting, and supporting reliable technology solutions.
             </p>
             <ul class="about-feature-list">
-              <li><i class="fa-solid fa-check text-cyan"></i> ERP backend support & transaction validation</li>
-              <li><i class="fa-solid fa-check text-cyan"></i> REST APIs, HTML/CSS/JavaScript, React.js</li>
-              <li><i class="fa-solid fa-check text-cyan"></i> Incident triage, debugging, & workflow automation</li>
+              <li><i class="fa-solid fa-check text-cyan"></i> Python-based workflow development & automation</li>
+              <li><i class="fa-solid fa-check text-cyan"></i> SQL backend analysis & transaction validation</li>
+              <li><i class="fa-solid fa-check text-cyan"></i> REST APIs, HTML/CSS, JavaScript & React.js</li>
+              <li><i class="fa-solid fa-check text-cyan"></i> Debugging, root-cause analysis & issue resolution</li>
+              <li><i class="fa-solid fa-check text-cyan"></i> L1/L2 support, system testing & cross-functional collaboration</li>
             </ul>
           </div>
         </div>
@@ -445,221 +421,42 @@ GROUP BY 1 ORDER BY 1 ASC;</code></pre>
       </div>
     </section>
 
-    <!-- Technical Skills Matrix -->
+    <!-- Skills -->
     <section id="skills" class="section skills-section">
       <div class="container">
         <div class="section-header text-center">
-          <span class="section-tag"><i class="fa-solid fa-microchip"></i> Core Competencies</span>
-          <h2 class="section-title">Technical <span class="gradient-text">Skill Matrix</span></h2>
-          <p class="section-subtitle">
-            Curated toolkit spanning Artificial Intelligence, Machine Learning, Data Analytics, Query Languages, and Web Technologies.
-          </p>
+          <h2 class="section-title">Technicall Skills</h2>
+          <p class="section-subtitle">Explore the tools and technologies I use to turn data into intelligent products.</p>
         </div>
 
-        <!-- Filter Tabs -->
-        <div class="skills-filter-tabs">
-          <button class="filter-btn active" data-filter="all">All Skills</button>
-          <button class="filter-btn" data-filter="ai-ml">Machine Learning & AI</button>
-          <button class="filter-btn" data-filter="analytics">Data Analytics & BI</button>
-          <button class="filter-btn" data-filter="programming">Programming & Query</button>
-          <button class="filter-btn" data-filter="tools">Libraries & Frameworks</button>
-          <button class="filter-btn" data-filter="web">Web & Full Stack</button>
+        <div class="skill-filters" role="group" aria-label="Filter skills">
+          <button class="skill-filter active" type="button" data-filter="all">All Skills</button>
+          <button class="skill-filter" type="button" data-filter="ai">AI &amp; ML</button>
+          <button class="skill-filter" type="button" data-filter="analytics">Analytics</button>
+          <button class="skill-filter" type="button" data-filter="development">Development</button>
         </div>
-
-        <!-- Skills Grid -->
-        <div class="skills-grid" id="skills-grid">
-          <!-- Python -->
-          <div class="skill-card glass-panel" data-category="programming ai-ml analytics">
-            <div class="skill-top">
-              <div class="skill-icon text-cyan"><i class="fa-brands fa-python"></i></div>
-              <div class="skill-info">
-                <h4>Python</h4>
-                <span>Core Programming & AI Workflows</span>
-              </div>
-              <span class="skill-level-badge">Proficient</span>
-            </div>
-            <div class="skill-bar-bg">
-              <div class="skill-bar-fill" style="width: 95%;"></div>
-            </div>
-            <p class="skill-desc">Pandas, NumPy, OpenCV, PyTorch, model building, automated data pipelines.</p>
-          </div>
-
-          <!-- SQL -->
-          <div class="skill-card glass-panel" data-category="programming analytics">
-            <div class="skill-top">
-              <div class="skill-icon text-purple"><i class="fa-solid fa-database"></i></div>
-              <div class="skill-info">
-                <h4>SQL</h4>
-                <span>Relational Databases & ERP Queries</span>
-              </div>
-              <span class="skill-level-badge">Advanced</span>
-            </div>
-            <div class="skill-bar-bg">
-              <div class="skill-bar-fill" style="width: 90%;"></div>
-            </div>
-            <p class="skill-desc">Complex queries, joins, aggregations, data extraction, validation, and ETL.</p>
-          </div>
-
-          <!-- Computer Vision & OpenCV -->
-          <div class="skill-card glass-panel" data-category="ai-ml tools">
-            <div class="skill-top">
-              <div class="skill-icon text-cyan"><i class="fa-solid fa-eye"></i></div>
-              <div class="skill-info">
-                <h4>OpenCV & Computer Vision</h4>
-                <span>Image & Video Processing</span>
-              </div>
-              <span class="skill-level-badge">Proficient</span>
-            </div>
-            <div class="skill-bar-bg">
-              <div class="skill-bar-fill" style="width: 92%;"></div>
-            </div>
-            <p class="skill-desc">Video frame extraction, multi-view datasets, feature detection, image preprocessing.</p>
-          </div>
-
-          <!-- PyTorch & Deep Learning -->
-          <div class="skill-card glass-panel" data-category="ai-ml tools">
-            <div class="skill-top">
-              <div class="skill-icon text-green"><i class="fa-solid fa-fire"></i></div>
-              <div class="skill-info">
-                <h4>PyTorch & Deep Learning</h4>
-                <span>Neural Architectures & SMPL Models</span>
-              </div>
-              <span class="skill-level-badge">Skilled</span>
-            </div>
-            <div class="skill-bar-bg">
-              <div class="skill-bar-fill" style="width: 88%;"></div>
-            </div>
-            <p class="skill-desc">CNNs, 3D human reconstruction, SMPL parametric models, model optimization.</p>
-          </div>
-
-          <!-- Data Analytics & EDA -->
-          <div class="skill-card glass-panel" data-category="analytics">
-            <div class="skill-top">
-              <div class="skill-icon text-yellow"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
-              <div class="skill-info">
-                <h4>Data Analytics & EDA</h4>
-                <span>Exploratory Analysis & Preprocessing</span>
-              </div>
-              <span class="skill-level-badge">Proficient</span>
-            </div>
-            <div class="skill-bar-bg">
-              <div class="skill-bar-fill" style="width: 94%;"></div>
-            </div>
-            <p class="skill-desc">Data cleaning, outlier detection, hypothesis testing, feature engineering.</p>
-          </div>
-
-          <!-- Power BI & Tableau -->
-          <div class="skill-card glass-panel" data-category="analytics tools">
-            <div class="skill-top">
-              <div class="skill-icon text-cyan"><i class="fa-solid fa-chart-pie"></i></div>
-              <div class="skill-info">
-                <h4>Power BI & Tableau</h4>
-                <span>Executive Dashboards & BI Reporting</span>
-              </div>
-              <span class="skill-level-badge">Skilled</span>
-            </div>
-            <div class="skill-bar-bg">
-              <div class="skill-bar-fill" style="width: 86%;"></div>
-            </div>
-            <p class="skill-desc">Interactive dashboarding, KPI telemetry, automated management reporting.</p>
-          </div>
-
-          <!-- GANs & Virtual Try-On -->
-          <div class="skill-card glass-panel" data-category="ai-ml">
-            <div class="skill-top">
-              <div class="skill-icon text-purple"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
-              <div class="skill-info">
-                <h4>GANs & Image Synthesis</h4>
-                <span>Generative Adversarial Networks</span>
-              </div>
-              <span class="skill-level-badge">Specialized</span>
-            </div>
-            <div class="skill-bar-bg">
-              <div class="skill-bar-fill" style="width: 85%;"></div>
-            </div>
-            <p class="skill-desc">Image-to-image translation, virtual apparel draping, model evaluation.</p>
-          </div>
-
-          <!-- Core Java -->
-          <div class="skill-card glass-panel" data-category="programming">
-            <div class="skill-top">
-              <div class="skill-icon text-yellow"><i class="fa-brands fa-java"></i></div>
-              <div class="skill-info">
-                <h4>Core Java</h4>
-                <span>OOP & Algorithmic Foundations</span>
-              </div>
-              <span class="skill-level-badge">Solid</span>
-            </div>
-            <div class="skill-bar-bg">
-              <div class="skill-bar-fill" style="width: 82%;"></div>
-            </div>
-            <p class="skill-desc">Data structures, object-oriented design, algorithm design, backend logic.</p>
-          </div>
-
-          <!-- Pandas & NumPy & Scikit-Learn -->
-          <div class="skill-card glass-panel" data-category="tools analytics">
-            <div class="skill-top">
-              <div class="skill-icon text-cyan"><i class="fa-solid fa-square-root-variable"></i></div>
-              <div class="skill-info">
-                <h4>Pandas, NumPy, Scikit-Learn</h4>
-                <span>Scientific Python Stack</span>
-              </div>
-              <span class="skill-level-badge">Proficient</span>
-            </div>
-            <div class="skill-bar-bg">
-              <div class="skill-bar-fill" style="width: 94%;"></div>
-            </div>
-            <p class="skill-desc">Supervised & unsupervised learning, matrix operations, statistical transformations.</p>
-          </div>
-
-          <!-- Web Technologies & React.js -->
-          <div class="skill-card glass-panel" data-category="web">
-            <div class="skill-top">
-              <div class="skill-icon text-purple"><i class="fa-brands fa-react"></i></div>
-              <div class="skill-info">
-                <h4>HTML5, CSS3, JS & React.js</h4>
-                <span>Full-Stack Web Development</span>
-              </div>
-              <span class="skill-level-badge">Skilled</span>
-            </div>
-            <div class="skill-bar-bg">
-              <div class="skill-bar-fill" style="width: 88%;"></div>
-            </div>
-            <p class="skill-desc">Responsive UIs, interactive dashboards, REST API integration, frontend state.</p>
-          </div>
-
-          <!-- Git & GitHub -->
-          <div class="skill-card glass-panel" data-category="tools">
-            <div class="skill-top">
-              <div class="skill-icon text-green"><i class="fa-brands fa-git-alt"></i></div>
-              <div class="skill-info">
-                <h4>Git & GitHub</h4>
-                <span>Version Control & Collaboration</span>
-              </div>
-              <span class="skill-level-badge">Proficient</span>
-            </div>
-            <div class="skill-bar-bg">
-              <div class="skill-bar-fill" style="width: 90%;"></div>
-            </div>
-            <p class="skill-desc">Branching workflows, repository management, collaborative code reviews.</p>
-          </div>
-
-          <!-- 3D Anthropometry & SMPL Models -->
-          <div class="skill-card glass-panel" data-category="ai-ml">
-            <div class="skill-top">
-              <div class="skill-icon text-cyan"><i class="fa-solid fa-cube"></i></div>
-              <div class="skill-info">
-                <h4>3D Anthropometry & Mesh</h4>
-                <span>Digital Human Body Fitting</span>
-              </div>
-              <span class="skill-level-badge">Specialized</span>
-            </div>
-            <div class="skill-bar-bg">
-              <div class="skill-bar-fill" style="width: 91%;"></div>
-            </div>
-            <p class="skill-desc">Parametric body measurements, apparel size recommendation algorithms.</p>
-          </div>
-        </div>
+        <ul class="skills-list" aria-label="Technical skills">
+          <li data-category="ai"><span class="skill-icon"><i class="fa-brands fa-python"></i></span><span>Python</span></li>
+          <li data-category="analytics"><span class="skill-icon"><i class="fa-solid fa-database"></i></span><span>SQL</span></li>
+          <li data-category="ai"><span class="skill-icon"><i class="fa-solid fa-eye"></i></span><span>OpenCV</span></li>
+          <li data-category="ai"><span class="skill-icon"><i class="fa-solid fa-camera"></i></span><span>Computer Vision</span></li>
+          <li data-category="ai"><span class="skill-icon"><i class="fa-solid fa-fire"></i></span><span>PyTorch</span></li>
+          <li data-category="ai"><span class="skill-icon"><i class="fa-solid fa-network-wired"></i></span><span>Deep Learning</span></li>
+          <li data-category="analytics"><span class="skill-icon"><i class="fa-solid fa-chart-line"></i></span><span>Data Analytics</span></li>
+          <li data-category="analytics"><span class="skill-icon"><i class="fa-solid fa-chart-column"></i></span><span>Power BI</span></li>
+          <li data-category="analytics"><span class="skill-icon"><i class="fa-solid fa-table-cells"></i></span><span>Tableau</span></li>
+          <li data-category="analytics"><span class="skill-icon"><i class="fa-solid fa-table"></i></span><span>Pandas</span></li>
+          <li data-category="analytics"><span class="skill-icon"><i class="fa-solid fa-calculator"></i></span><span>NumPy</span></li>
+          <li data-category="ai"><span class="skill-icon"><i class="fa-solid fa-flask"></i></span><span>Scikit-learn</span></li>
+          <li data-category="development"><span class="skill-icon"><i class="fa-brands fa-java"></i></span><span>Core Java</span></li>
+          <li data-category="development"><span class="skill-icon"><i class="fa-brands fa-html5"></i></span><span>HTML</span></li>
+          <li data-category="development"><span class="skill-icon"><i class="fa-brands fa-css3-alt"></i></span><span>CSS</span></li>
+          <li data-category="development"><span class="skill-icon"><i class="fa-brands fa-js"></i></span><span>JavaScript</span></li>
+          <li data-category="development"><span class="skill-icon"><i class="fa-brands fa-react"></i></span><span>React</span></li>
+          <li data-category="development"><span class="skill-icon"><i class="fa-brands fa-git-alt"></i></span><span>Git</span></li>
+          <li data-category="development"><span class="skill-icon"><i class="fa-brands fa-github"></i></span><span>GitHub</span></li>
+          <li data-category="ai"><span class="skill-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></span><span>GANs</span></li>
+          <li data-category="ai"><span class="skill-icon"><i class="fa-solid fa-person"></i></span><span>3D Anthropometry</span></li>        </ul>
       </div>
     </section>
 
@@ -670,11 +467,41 @@ GROUP BY 1 ORDER BY 1 ASC;</code></pre>
           <span class="section-tag"><i class="fa-solid fa-briefcase"></i> Work History</span>
           <h2 class="section-title">Professional <span class="gradient-text">Experience</span></h2>
           <p class="section-subtitle">
-            A track record of high-impact contributions across EdTech platforms, AI innovation labs, and enterprise systems.
+            A track record of high-impact contributions across EdTech platforms, AI innovation, and enterprise systems.
           </p>
         </div>
 
-        <div class="timeline">
+     <div class="timeline">
+        <!-- Course role: Learnbay -->
+          <div class="timeline-item">
+            <div class="timeline-dot current"></div>
+            <div class="timeline-card glass-panel highlight-border">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="role-title">Data Science and Gen AI</h3>
+                  <h4 class="company-name text-purple"><i class="fa-solid fa-microchip"></i> Learnbay, Bangalore</h4>
+                </div>
+                <div class="role-date-badge current">Jun 2026 – Present</div>
+              </div>
+              <p class="role-summary">
+                Advanced Data Science and Generative AI Trainee / Intern.
+              </p>
+              <ul class="role-points">
+                <li>Developing hands on expertise in Python, Machine Learning, Data Analysis, Deep LEarning, LLMs, RAG, and AI application development through structured training and internship work.</li>
+                <li>Applying AI/ML and data science concepts to practical workflows involving model development, data processing, experimentation, evaluation, and AI application integration.</li>
+              </ul>
+              <div class="tech-tags">
+                <span class="tag">Python</span>
+                <span class="tag">AI/ML</span>
+                <span class="tag">Statistics</span>
+                <span class="tag">Data Analysis</span>
+                <span class="tag">SQL</span>
+                <span class="tag">Generative AI</span>
+              </div>
+            </div>
+          </div>
+
+        
           <!-- Role 1: 21K School -->
           <div class="timeline-item">
             <div class="timeline-dot current"></div>
@@ -684,19 +511,21 @@ GROUP BY 1 ORDER BY 1 ASC;</code></pre>
                   <h3 class="role-title">Technical Support Executive</h3>
                   <h4 class="company-name text-cyan"><i class="fa-solid fa-building"></i> 21K School, Bangalore</h4>
                 </div>
-                <div class="role-date-badge current">May 2026 – Present</div>
+                <div class="role-date-badge current">May 2026 - Present</div>
               </div>
               <p class="role-summary">
-                Supporting mission-critical technical operations, troubleshooting, and platform stability for a leading EdTech online education ecosystem.
+                Integrated AI-driven problem solving with data analysis and technical troubleshooting to imrpove ERP reliability and operational efficiency.
               </p>
               <ul class="role-points">
-                <li>Managing end-to-end technical incident triage and operational support for real-time online learning platforms.</li>
-                <li>Diagnosing and resolving system bottlenecks, authentication issues, and user workflow blockers to ensure high service availability.</li>
-                <li>Collaborating with engineering teams to document bug patterns and optimize platform usability.</li>
+                <li>Applied AI assisted analytical approaches to troubleshoot recurring application issues, identify potential causes, streamline problem solving workflows, and support continuous improvement of ERP operations.</li>
+                <li>Leveraged AI tools for technical analysis, debugging, and problem solving across ERP frontend and backend issues.</li>
+                <li>Performed data analysis, validation and quality checks across ERP and database related functionality between backend data and frontend outputs.</li>
+                <li>Analyzed ERP data, system behavior, and application issues to identify data discrepancies, recurring patterns, anomalies and root causes, supporting accurate and timely resolution.</li>
               </ul>
               <div class="tech-tags">
+                <span class="tag">AI & Analytics</span>
                 <span class="tag">EdTech Platform</span>
-                <span class="tag">Technical Support</span>
+                <span class="tag">Sofware Support</span>
                 <span class="tag">Operations</span>
                 <span class="tag">Troubleshooting</span>
               </div>
@@ -747,13 +576,14 @@ GROUP BY 1 ORDER BY 1 ASC;</code></pre>
                   <h3 class="role-title">Software Support Engineer</h3>
                   <h4 class="company-name text-green"><i class="fa-solid fa-server"></i> Tech Avant Garde, Bangalore</h4>
                 </div>
-                <div class="role-date-badge">Jul 2025 – Nov 2025</div>
+                <div class="role-date-badge">Jul 2025 - Nov 2025</div>
               </div>
               <p class="role-summary">
                 Contributed to large-scale EdTech & HealthTech digital transformation programs spanning hybrid learning, STEM/STEAM, ERP portals, and fee management systems.
               </p>
               <ul class="role-points">
-                <li><strong>SQL Backend Analytics:</strong> Executed in-depth database queries and transaction auditing to resolve operational bugs and ensure flawless academic/financial data consistency.</li>
+                <li><strong>SQL Backend Analytics:</strong> Analyzed ERP backend data using SQL and Python to troubleshoot issues, validate transactions, and ensure accuracy across systems.</li>
+                <li><strong>Frontend Development:</strong> Worked on Frontend development for project Carte Blanche, working on features, UI enhancements, and application workflows while integrating frontend functionality with backend services.</li>
                 <li><strong>ETL & Data Transformation:</strong> Performed large-scale data extraction, cleansing, and normalization to streamline institutional onboarding, client reporting, and backup management.</li>
                 <li><strong>Deployment & System Testing:</strong> Assisted product teams in regression testing, staging verification, and deployment rollouts for ERP platform updates.</li>
                 <li><strong>SLA Management:</strong> Resolved L1/L2 support tickets within strict SLA timelines, performing root cause analyses on escalated incident reports.</li>
@@ -800,11 +630,6 @@ GROUP BY 1 ORDER BY 1 ASC;</code></pre>
               <p class="project-desc">
                 Pioneered an end-to-end computer vision pipeline converting 2D camera feeds into SMPL parametric 3D body meshes with automated anthropometric sizing and GAN garment synthesis.
               </p>
-              <div class="project-highlights">
-                <div><strong>98.6%</strong><span>Keypoint Accuracy</span></div>
-                <div><strong>18ms</strong><span>Inference Latency</span></div>
-                <div><strong>SMPL-X</strong><span>3D Parametric Mesh</span></div>
-              </div>
               <div class="project-tech">
                 <span>Python</span>
                 <span>PyTorch</span>
@@ -825,24 +650,18 @@ GROUP BY 1 ORDER BY 1 ASC;</code></pre>
                   <i class="fa-solid fa-maximize"></i> View Deep Dive
                 </button>
               </div>
-              <span class="project-badge badge-data">Data Analytics & BI</span>
+              <span class="project-badge badge-data">Data Analytics & Digital Transformation-Project </span>
             </div>
             <div class="project-body">
               <h3 class="project-title">Enterprise ERP Analytics & Executive Dashboard Suite</h3>
               <p class="project-desc">
-                Comprehensive data analytics, SQL validation, and executive dashboarding suite built to monitor multi-institutional EdTech transactions, attendance trends, and retention rates.
+                Comprehensive data analytics, SQL validation, and executive dashboarding suite built to monitor multi-institutional EdTech transactions, and attendance trends.
               </p>
-              <div class="project-highlights">
-                <div><strong>125k+</strong><span>Records Validated</span></div>
-                <div><strong>99.8%</strong><span>Data Consistency</span></div>
-                <div><strong>SQL + BI</strong><span>Automated Reports</span></div>
-              </div>
               <div class="project-tech">
                 <span>SQL</span>
                 <span>Python</span>
                 <span>Pandas</span>
                 <span>Power BI</span>
-                <span>Tableau</span>
                 <span>EDA</span>
               </div>
             </div>
@@ -864,11 +683,6 @@ GROUP BY 1 ORDER BY 1 ASC;</code></pre>
               <p class="project-desc">
                 Major Engineering Capstone: An intelligent wireless power transmission system for EVs utilizing magnetic resonance coils paired with RFID-based automated payment processing.
               </p>
-              <div class="project-highlights">
-                <div><strong>RFID</strong><span>Automated Billing</span></div>
-                <div><strong>IoT</strong><span>Cloud Telemetry</span></div>
-                <div><strong>Hardware</strong><span>Arduino IDE</span></div>
-              </div>
               <div class="project-tech">
                 <span>Arduino IDE</span>
                 <span>IoT Sensors</span>
@@ -898,17 +712,11 @@ GROUP BY 1 ORDER BY 1 ASC;</code></pre>
               <p class="project-desc">
                 Full-stack web application engineered to manage electronic health records, doctor appointment scheduling, automated patient billing, and hospital staff directories.
               </p>
-              <div class="project-highlights">
-                <div><strong>MySQL</strong><span>Relational Schema</span></div>
-                <div><strong>CRUD</strong><span>Role-based Access</span></div>
-                <div><strong>Web UI</strong><span>Responsive Layout</span></div>
-              </div>
               <div class="project-tech">
                 <span>MySQL</span>
-                <span>HTML5</span>
-                <span>CSS3</span>
+                <span>HTML</span>
+                <span>CSS</span>
                 <span>JavaScript</span>
-                <span>PHP/Backend</span>
               </div>
             </div>
           </div>
@@ -935,7 +743,7 @@ GROUP BY 1 ORDER BY 1 ASC;</code></pre>
             <div class="edu-content">
               <h3>B.E. in Computer Science and Engineering</h3>
               <h4 class="institute text-cyan">Brindavan College of Engineering</h4>
-              <p class="university">Visvesvaraya Technological University (VTU) — Bangalore</p>
+              <p class="university">Visvesvaraya Technological University (VTU) - Bangalore</p>
               <div class="edu-meta">
                 <span class="grade"><i class="fa-solid fa-star text-yellow"></i> CGPA: <strong>8.1 / 10</strong></span>
                 <span class="date"><i class="fa-regular fa-calendar"></i> Graduated: May 2024</span>
@@ -954,7 +762,7 @@ GROUP BY 1 ORDER BY 1 ASC;</code></pre>
               <div>
                 <h4>Python & Data Science Professional</h4>
                 <p class="cert-provider">Konigtronics Pvt Ltd</p>
-                <span class="cert-date"><i class="fa-regular fa-calendar"></i> Sept 2024 – Oct 2024</span>
+                <span class="cert-date"><i class="fa-regular fa-calendar"></i> Sept 2024 - Oct 2024</span>
                 <p class="cert-desc">Intensive specialization in Python for scientific computing, statistical analysis, Pandas, NumPy, Scikit-learn, and predictive modeling.</p>
               </div>
             </div>
@@ -965,7 +773,7 @@ GROUP BY 1 ORDER BY 1 ASC;</code></pre>
               <div>
                 <h4>Full Stack Developer Certification</h4>
                 <p class="cert-provider">Global Quest Technologies</p>
-                <span class="cert-date"><i class="fa-regular fa-calendar"></i> Feb 2024 – Jun 2024</span>
+                <span class="cert-date"><i class="fa-regular fa-calendar"></i> Feb 2024 - Jun 2024</span>
                 <p class="cert-desc">Comprehensive program covering frontend UI engineering, JavaScript/React, relational databases, backend server architectures, and API design.</p>
               </div>
             </div>
@@ -981,7 +789,7 @@ GROUP BY 1 ORDER BY 1 ASC;</code></pre>
           <span class="section-tag highlight-tag"><i class="fa-solid fa-paper-plane"></i> Get In Touch</span>
           <h2 class="section-title">Let's Connect & <span class="gradient-text">Collaborate</span></h2>
           <p class="section-subtitle">
-            Whether you are hiring for an AI/ML or Data Analyst role, seeking collaboration, or discussing project ideas, feel free to reach out directly!
+            Open for AI/ML or Python or Data Analyst role, seeking collaboration, or discussing project ideas, feel free to reach out directly!
           </p>
         </div>
 
@@ -1015,9 +823,9 @@ GROUP BY 1 ORDER BY 1 ASC;</code></pre>
             <div class="card-icon text-cyan"><i class="fa-brands fa-linkedin-in"></i></div>
             <div class="card-content">
               <span class="info-label">LinkedIn</span>
-              <a href="https://linkedin.com/in/ayesha-nikhath-s" target="_blank" rel="noopener noreferrer" class="info-val">linkedin.com/in/ayesha-nikhath-s</a>
+              <a href="https://www.linkedin.com/in/ayesha-nikhath-s-066951253/" target="_blank" rel="noopener noreferrer" class="info-val">LinkedIn - Ayesha Nikhath S</a>
             </div>
-            <a href="https://linkedin.com/in/ayesha-nikhath-s" target="_blank" rel="noopener noreferrer" class="btn btn-glass btn-sm" title="Visit Profile">
+            <a href="https://www.linkedin.com/in/ayesha-nikhath-s-066951253/" target="_blank" rel="noopener noreferrer" class="btn btn-glass btn-sm" title="Visit Profile">
               <i class="fa-solid fa-arrow-up-right-from-square"></i> Visit
             </a>
           </div>
@@ -1036,8 +844,8 @@ GROUP BY 1 ORDER BY 1 ASC;</code></pre>
           <div class="contact-info-card glass-panel resume-contact-card">
             <div class="card-icon text-cyan"><i class="fa-solid fa-file-pdf"></i></div>
             <div class="card-content">
-              <span class="info-label">Curriculum Vitae</span>
-              <span class="info-val">Ayesha Nikhath S — Resume</span>
+              <span class="info-label">RESUME</span>
+              <span class="info-val">Ayesha Nikhath S - Resume</span>
             </div>
             <button type="button" class="btn btn-primary btn-sm open-resume-trigger" title="Preview & Print Resume">
               <i class="fa-solid fa-eye"></i> View CV
@@ -1053,7 +861,7 @@ GROUP BY 1 ORDER BY 1 ASC;</code></pre>
     <div class="container footer-content">
       <div class="footer-brand">
         <span class="brand-text">Ayesha Nikhath S</span>
-        <p>Data Analyst & AI/ML Professional | Bangalore, Karnataka</p>
+        <p>AI, Python and Data Professional | Bangalore, Karnataka</p>
       </div>
     </div>
   </footer>
@@ -1065,10 +873,10 @@ GROUP BY 1 ORDER BY 1 ASC;</code></pre>
       <div class="modal-header">
         <div class="modal-title-group">
           <i class="fa-solid fa-file-pdf text-cyan"></i>
-          <h3>Ayesha Nikhath S — Professional Resume</h3>
+          <h3>Ayesha Nikhath S - Professional Resume</h3>
         </div>
         <div class="modal-actions">
-          <button id="print-resume-btn" class="btn btn-glass btn-sm"><i class="fa-solid fa-print"></i> Print / Save PDF</button>
+          <button id="download-resume-btn" class="btn btn-glass btn-sm"><i class="fa-solid fa-download"></i> Download Resume</button>
           <button id="close-resume-modal" class="modal-close-btn" aria-label="Close modal">&times;</button>
         </div>
       </div>
@@ -1076,7 +884,7 @@ GROUP BY 1 ORDER BY 1 ASC;</code></pre>
       <div class="modal-body resume-print-view" id="resume-content">
         <div class="resume-header">
           <h1>Ayesha Nikhath S</h1>
-          <h2>Data Analyst | AI/ML Professional</h2>
+          <h2>AI, Python and Data Professional</h2>
           <div class="resume-contact-bar">
             <span><i class="fa-solid fa-location-dot"></i> Bangalore, Karnataka</span>
             <span><i class="fa-solid fa-phone"></i> +91-6366302944</span>
@@ -1090,16 +898,16 @@ GROUP BY 1 ORDER BY 1 ASC;</code></pre>
         <div class="resume-section">
           <h3>Professional Summary</h3>
           <p>
-            Aspiring Data Analyst and AI/ML professional with hands-on experience in Python, SQL, data analysis, and machine learning workflows. Skilled in developing computer vision and AI/ML solutions using OpenCV, PyTorch, Pandas, and deep learning techniques for data-driven applications. Experienced in data preprocessing, validation, exploratory data analysis (EDA), model evaluation, workflow optimization, and backend data analysis. Strong analytical and problem-solving abilities with a focus on building accurate, scalable, and user-focused AI/ML solutions.
+            AI, Python and Data Professional with 2+ years of combined experience, including 1+ years as a Software Support Engineer and hands-on experience as an AI Developer building end to end ML pipelines. Skilled in Python based development across data analysis, automation, and application integration, with full-stack exposure by also providing AI/ML solutions using OpenCV, PyTorch, Pandas, and deep learning techniques for data-driven applications. Experienced in data preprocessing, validation, EDA, model evaluation, and workflow optimization. Currently applying AI-assisted development in ERP/backend support while expanding Generative AI/LLM expertise (RAG, prompt engineering) through hands on coursework.
           </p>
         </div>
 
         <div class="resume-section">
           <h3>Technical Skills</h3>
           <p><strong>Programming & Query Languages:</strong> Python, SQL, Core Java</p>
-          <p><strong>Data Analytics & Visualization:</strong> Data Analysis, Data Cleaning, Data Visualization, Data Preprocessing, EDA, Dashboarding, Reporting, Statistics, Excel, Power BI, Tableau</p>
-          <p><strong>Machine Learning & AI:</strong> Supervised Learning, Unsupervised Learning, Model Training & Evaluation, Computer Vision, Image Preprocessing, Human Pose Estimation, Image Segmentation, Feature Detection, Deep Learning, CNN, Model Optimization and Tuning</p>
-          <p><strong>Libraries & Tools:</strong> Pandas, NumPy, OpenCV, PyTorch (Basics), TensorFlow (Basics), Scikit-learn, Matplotlib, Git, GitHub</p>
+          <p><strong>Data Analytics & Visualization:</strong> Data Analysis, Data Cleaning, Data Preprocessing, EDA, Dashboarding, Reporting, Statistics, Excel, Power BI</p>
+          <p><strong>Machine Learning & AI:</strong> Model Training & Evaluation, Generative AI, LLMs, RAG, Prompt Engineering, Computer Vision, Image Preprocessing, Human Pose Estimation, Image Segmentation, Feature Detection, Deep Learning, CNN, Model Optimization and Tuning</p>
+          <p><strong>Libraries & Tools:</strong> Pandas, NumPy, OpenCV, PyTorch, TensorFlow, Scikit-learn, Matplotlib, FastAPI, Git, GitHub</p>
           <p><strong>Web Technologies:</strong> HTML, CSS, JavaScript, React.js</p>
         </div>
 
@@ -1107,11 +915,23 @@ GROUP BY 1 ORDER BY 1 ASC;</code></pre>
           <h3>Professional Experience</h3>
           <div class="resume-exp-item">
             <div class="exp-title-row">
-              <strong>Technical Support Executive — 21K School, Bangalore</strong>
-              <span>May 2026 – Present</span>
+              <strong>Data Science & Generative AI (Training & Internship) — Learnbay, Bangalore</strong>
+              <span>Jun 2026 - Present</span>
             </div>
             <ul>
-              <li>Supporting technical operations and troubleshooting for an EdTech platform.</li>
+              <li>Developing hands on skills in Python, ML, Data Analysis, Deep Learning, LLMs, RAG, and AI application development.</li>
+              <li>Building self driven, AI integrated full stack projects to apply and extend Python and AI/ML development skills.</li>
+            </ul>
+          </div>
+
+          <div class="resume-exp-item">
+            <div class="exp-title-row">
+             <p>Technical Support Executive — 21K School, Bangalore (Concurrent)</p>
+              <span>May 2026 - Present</span>
+            </div>
+            <ul>
+              <li>Apply AI assisted development and debugging to troubleshoot ERP frontend/backend issues, identify root causes, and improve applcation workflow.</li>
+              <li>Perform ERP data analysis and validation, leveraging AI tools to investigate data discrepancies and support technical and application related issues.</li>
             </ul>
           </div>
 
@@ -1132,7 +952,7 @@ GROUP BY 1 ORDER BY 1 ASC;</code></pre>
 
           <div class="resume-exp-item">
             <div class="exp-title-row">
-              <strong>Software Support Engineer — Tech Avant Garde, Bangalore</strong>
+              <strong>Software Support Engineer - Tech Avant Garde, Bangalore</strong>
               <span>Jul 2025 – Nov 2025</span>
             </div>
             <ul>
@@ -1147,7 +967,7 @@ GROUP BY 1 ORDER BY 1 ASC;</code></pre>
         <div class="resume-section">
           <h3>Academic Projects</h3>
           <div class="resume-exp-item">
-            <strong>IoT-Based Wireless Charging for Electric Vehicles Using Arduino IDE — Major Project</strong>
+            <strong>IoT-Based Wireless Charging for Electric Vehicles Using Arduino IDE - Major Project</strong>
             <p><em>Technologies: Arduino IDE, IoT, RFID</em></p>
             <ul>
               <li>Developed an IoT-based wireless charging system for EVs with transmitting/receiving coils and RFID-based automated payment processing.</li>
@@ -1155,7 +975,7 @@ GROUP BY 1 ORDER BY 1 ASC;</code></pre>
           </div>
 
           <div class="resume-exp-item">
-            <strong>Hospital Management System — Mini Project</strong>
+            <strong>Hospital Management System - Mini Project</strong>
             <p><em>Technologies: MySQL, HTML, CSS, JavaScript</em></p>
             <ul>
               <li>Developed a web-based hospital management system to manage patient records, appointments, billing, and staff information.</li>
@@ -1166,8 +986,8 @@ GROUP BY 1 ORDER BY 1 ASC;</code></pre>
         <div class="resume-section">
           <h3>Training & Certifications</h3>
           <ul>
-            <li>Full Stack Developer — Global Quest Technologies (Feb 2024 – Jun 2024)</li>
-            <li>Python & Data Science — Konigtronics Pvt Ltd (Sept 2024 – Oct 2024)</li>
+            <li>Full Stack Developer - Global Quest Technologies (Feb 2024 - Jun 2024)</li>
+            <li>Python & Data Science - Konigtronics Pvt Ltd (Sept 2024 - Oct 2024)</li>
           </ul>
         </div>
 
@@ -1177,7 +997,7 @@ GROUP BY 1 ORDER BY 1 ASC;</code></pre>
             <strong>B.E. in Computer Science and Engineering</strong>
             <span>May 2024</span>
           </div>
-          <p>Brindavan College of Engineering, Visvesvaraya Technological University — Bangalore | <strong>CGPA: 8.1</strong></p>
+          <p>Brindavan College of Engineering, Visvesvaraya Technological University - Bangalore | <strong>CGPA: 8.1</strong></p>
         </div>
       </div>
     </div>
@@ -1199,5 +1019,207 @@ GROUP BY 1 ORDER BY 1 ASC;</code></pre>
 
   <!-- JavaScript -->
   <script src="script.js"></script>
+   
+  <!-- JavaScript for background animation -->  <script>
+(() => {
+  const canvas = document.getElementById("particle-canvas");
+
+  if (!canvas) return;
+
+  const ctx = canvas.getContext("2d");
+
+  let particles = [];
+  let animationFrame;
+  let width = 0;
+  let height = 0;
+  let dpr = 1;
+
+  const config = {
+    particleCount: 65,
+    maxDistance: 150,
+    particleSpeed: 0.22,
+    particleSizeMin: 1,
+    particleSizeMax: 2.2,
+    particleOpacity: 0.45,
+    lineOpacity: 0.12
+  };
+
+  function resizeCanvas() {
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+
+    width = window.innerWidth;
+    height = window.innerHeight;
+
+    canvas.width = width * dpr;
+    canvas.height = height * dpr;
+
+    canvas.style.width = width + "px";
+    canvas.style.height = height + "px";
+
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+    createParticles();
+  }
+
+  function createParticles() {
+    const count = Math.min(
+      config.particleCount,
+      Math.floor((width * height) / 17000)
+    );
+
+    particles = [];
+
+    for (let i = 0; i < count; i++) {
+      particles.push({
+        x: Math.random() * width,
+        y: Math.random() * height,
+
+        vx: (Math.random() - 0.5) * config.particleSpeed,
+        vy: (Math.random() - 0.5) * config.particleSpeed,
+
+        radius:
+          config.particleSizeMin +
+          Math.random() *
+            (config.particleSizeMax - config.particleSizeMin),
+
+        opacity:
+          0.18 +
+          Math.random() * config.particleOpacity,
+
+        color:
+          Math.random() > 0.72
+            ? "127, 0, 255"
+            : "0, 242, 254"
+      });
+    }
+  }
+
+  function updateParticles() {
+    particles.forEach((particle) => {
+      particle.x += particle.vx;
+      particle.y += particle.vy;
+
+      /* Bounce softly at screen edges */
+      if (particle.x < 0 || particle.x > width) {
+        particle.vx *= -1;
+      }
+
+      if (particle.y < 0 || particle.y > height) {
+        particle.vy *= -1;
+      }
+    });
+  }
+
+  function drawParticle(particle) {
+    /* Very faint glow */
+    const gradient = ctx.createRadialGradient(
+      particle.x,
+      particle.y,
+      0,
+      particle.x,
+      particle.y,
+      particle.radius * 6
+    );
+
+    gradient.addColorStop(
+      0,
+      `rgba(${particle.color}, ${particle.opacity * 0.6})`
+    );
+
+    gradient.addColorStop(
+      1,
+      `rgba(${particle.color}, 0)`
+    );
+
+    ctx.beginPath();
+    ctx.arc(
+      particle.x,
+      particle.y,
+      particle.radius * 6,
+      0,
+      Math.PI * 2
+    );
+
+    ctx.fillStyle = gradient;
+    ctx.fill();
+
+    /* Main particle */
+    ctx.beginPath();
+    ctx.arc(
+      particle.x,
+      particle.y,
+      particle.radius,
+      0,
+      Math.PI * 2
+    );
+
+    ctx.fillStyle = `rgba(${particle.color}, ${particle.opacity})`;
+    ctx.fill();
+  }
+
+  function drawConnections() {
+    for (let i = 0; i < particles.length; i++) {
+      for (let j = i + 1; j < particles.length; j++) {
+        const p1 = particles[i];
+        const p2 = particles[j];
+
+        const dx = p1.x - p2.x;
+        const dy = p1.y - p2.y;
+
+        const distance = Math.sqrt(dx * dx + dy * dy);
+
+        if (distance < config.maxDistance) {
+          const opacity =
+            (1 - distance / config.maxDistance) *
+            config.lineOpacity;
+
+          ctx.beginPath();
+          ctx.moveTo(p1.x, p1.y);
+          ctx.lineTo(p2.x, p2.y);
+
+          ctx.strokeStyle = `rgba(0, 217, 255, ${opacity})`;
+          ctx.lineWidth = 0.7;
+          ctx.stroke();
+        }
+      }
+    }
+  }
+
+  function animate() {
+    ctx.clearRect(0, 0, width, height);
+
+    updateParticles();
+    drawConnections();
+
+    particles.forEach(drawParticle);
+
+    animationFrame = requestAnimationFrame(animate);
+  }
+
+  function start() {
+    cancelAnimationFrame(animationFrame);
+    resizeCanvas();
+    animate();
+  }
+
+  window.addEventListener("resize", resizeCanvas);
+
+  /* Respect users who prefer reduced motion */
+  const reducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  );
+
+  if (!reducedMotion.matches) {
+    start();
+  } else {
+    resizeCanvas();
+    particles.forEach(drawParticle);
+  }
+})();
+</script>
+
 </body>
 </html>
+
+
+
