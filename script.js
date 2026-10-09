@@ -825,7 +825,7 @@ function initModals() {
   const resumeModal = document.getElementById('resume-modal');
   const resumeTriggers = document.querySelectorAll('.open-resume-trigger');
   const closeResumeBtn = document.getElementById('close-resume-modal');
-  const downloadResumeBtn = document.getElementById('download-resume-btn');
+  //const downloadResumeBtn = document.getElementById('download-resume-btn');
 
   resumeTriggers.forEach((btn) => {
     btn.addEventListener('click', () => {
@@ -843,23 +843,7 @@ function initModals() {
     });
   }
 
-  if (downloadResumeBtn) {
-    downloadResumeBtn.addEventListener('click', () => {
-      const resumeContent = document.getElementById('resume-content');
-      if (!resumeContent) return;
-      const resumeDocument = `<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Ayesha Nikhath S - Resume</title><style>body{margin:0;padding:40px;background:#f1f5f9;font-family:Arial,sans-serif;color:#1a202c}.resume{max-width:850px;margin:auto;padding:42px;background:#fff;line-height:1.5}h1{margin:0 0 4px}h2{color:#0070f3;font-size:18px}h3{border-bottom:2px solid #0f172a;padding-bottom:4px;text-transform:uppercase;font-size:15px}.resume-contact-bar{display:flex;flex-wrap:wrap;gap:18px;color:#475569;font-size:13px}.resume-section{margin-top:22px}.resume-section p,.resume-section li{font-size:14px;color:#334155}@media print{body{padding:0;background:#fff}.resume{max-width:none}}</style></head><body><main class="resume">${resumeContent.innerHTML}</main></body></html>`;
-      const downloadUrl = URL.createObjectURL(new Blob([resumeDocument], { type: 'text/html' }));
-      const link = document.createElement('a');
-      link.href = downloadUrl;
-      link.download = 'Ayesha-Nikhath-S-Resume.html';
-      document.body.appendChild(link);
-      link.click();
-      link.remove();
-      URL.revokeObjectURL(downloadUrl);
-      showToast('Resume downloaded successfully.', 'success');
-    });
-  }
-
+  
   const skillFilters = document.querySelectorAll('.skill-filter');
   const skillItems = document.querySelectorAll('.skills-list li');
   skillFilters.forEach((filterButton) => {
@@ -869,6 +853,7 @@ function initModals() {
       skillItems.forEach((skill) => skill.classList.toggle('is-hidden', selectedFilter !== 'all' && skill.dataset.category !== selectedFilter));
     });
   });
+  
   // Project Deep Dive Modal
   const projectModal = document.getElementById('project-modal');
   const modalProjectTitle = document.getElementById('modal-project-title');

@@ -876,12 +876,16 @@ GROUP BY 1 ORDER BY 1 ASC;</code></pre>
           <h3>Ayesha Nikhath S - Professional Resume</h3>
         </div>
         <div class="modal-actions">
-          <button id="download-resume-btn" class="btn btn-glass btn-sm"><i class="fa-solid fa-download"></i> Download Resume</button>
+          <a id="download-resume-btn" 
+          class="btn btn-glass btn-sm" 
+          href="assets/Ayesha_Nikhath_S_Resume.pdf" 
+          download="Ayesha_Nikhath_S_Resume.pdf">
+        <i class="fa-solid fa-download"></i> Download Resume</a>
           <button id="close-resume-modal" class="modal-close-btn" aria-label="Close modal">&times;</button>
         </div>
       </div>
 
-      <div class="modal-body resume-print-view" id="resume-content">
+      <!-- <div class="modal-body resume-print-view" id="resume-content">
         <div class="resume-header">
           <h1>Ayesha Nikhath S</h1>
           <h2>AI, Python and Data Professional</h2>
@@ -1001,7 +1005,17 @@ GROUP BY 1 ORDER BY 1 ASC;</code></pre>
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
+
+  
+<div class="modal-body resume-pdf-container" id="resume-content">
+  <iframe
+    id="resume-pdf-viewer"
+    src="assets/Ayesha_Nikhath_S_Resume.pdf#toolbar=0"
+    title="Ayesha Nikhath S - Resume PDF"
+    loading="lazy">
+  </iframe>
+</div>
 
   <!-- Project Details Modal -->
   <div id="project-modal" class="modal" aria-hidden="true" role="dialog">
